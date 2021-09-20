@@ -5,30 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>No NOTE Forget</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <h1>DO NOTE FORGET</h1>
     </header>
-    <div id="input-left">
-        <for>
-            <input type="text" name="note-input" id="note-input" placeholder="Type your note" required>
-            <button type="submit">Add</button>
-        </for>
-        <form>
-            <input type="text" name="tag-input" id="tag-input" placeholder="Add a tag">
-        </form>
-    </div>
-    <div id="input-right">
-        <form>
-            <input type="text" name="note-input" id="note-input" placeholder="Search by tag-name">
-            <button type="submit">Search</button>
-        </form>
 
+    <form class="add-notes">
+        <input type="text" name="note" id="input-note" placeholder="Type your note" required>
+        <input type="submit" value="Add">
+    </form>
+
+    <div class="notes">
+        <li>Here goes the text</li>
     </div>
 
 
