@@ -11,18 +11,13 @@ h1 {
 	text-align: center;
 }
 
-main {
-	.note-text {
-		color: blueviolet;
-	}
-}
-
 .notes-container {
 	&__div {
 		&__delete-btn {
 		}
 
 		&__p-text {
+			color: blueviolet;
 		}
 
 		&__p-tag {

@@ -12,11 +12,8 @@ const notesContainer = document.querySelector('.notes-container');
 
 // Local Storage Access
 const notesInStorage = JSON.parse(localStorage.getItem('notes')) || [];
-// Tags Array for Search Function
-const tagsInStorage = JSON.parse(localStorage.getItem('tags')) || [];
 
 noteForm.addEventListener('submit', createNote);
-searchForm.addEventListener('submit', tagSearch);
 
 function createNote(e) {
 	e.preventDefault();
@@ -36,108 +33,65 @@ function createNote(e) {
 	noteTextInputField.value = '';
 	tagInputField.value = '';
 
-	populateList(notesInStorage, notesContainer);
+	createNoteDOM(text, tag);
 }
 
 function updateLocalStorage() {
 	localStorage.setItem('notes', JSON.stringify(notesInStorage));
-	localStorage.setItem('tags', JSON.stringify(tagsInStorage)); // remove
 }
 
-// IDEA: rewrite with createElement?
-// needs classes: note-text / tag-text (maybe rewrite too btw)
+// ?? arguments: text, tags, *mysterious* ??
+function createNoteDOM(text, tag) {
+	const div = document.createElement('div');
+	const deleteBtn = document.createElement('button');
+	const pText = document.createElement('p');
+	const pTag = document.createElement('p');
 
-/*
-<div>
-<button>X</button>
-<p>text</p> 
-	<p>tag</p>
-</div>
-*/
+	deleteBtn.textContent = 'x';
+	pText.textContent = text;
+	pTag.textContent = tag;
 
-// PSEUDO CODE
-/* 
-x create div
-x create delete button
-x create p - text
-x create p - tag
+	div.classList.add('notes-container__div');
+	deleteBtn.classList.add('notes-container__delete-btn');
+	pText.classList.add('notes-container__div__p-text');
+	pTag.classList.add('notes-container__div__p-tag');
 
-x add class for div
-x add class for button
-x add class for p - text
-x add class for p - tag
+	div.appendChild(deleteBtn);
+	div.appendChild(pText);
+	div.appendChild(pTag);
 
-x append button to div
-x append p - text to div
-x append p - tag to div
-x append div to notesContainer
-*/
+	notesContainer.appendChild(div);
+}
 
-// function populateNotesContainer() {
-// 	const div = document.createElement('div');
-// 	const deleteBtn = document.createElement('button');
-// 	const pText = document.createElement('p');
-// 	const pTag = document.createElement('p');
+function populateList() {
+	notesInStorage.map(note => createNoteDOM(note.text, note.tag));
+}
 
-// 	div.classList.add('notes-container__div');
-// 	deleteBtn.classList.add('notes-container__delete-btn');
-// 	pText.classList.add('notes-container__div__p-text');
-// 	pTag.classList.add('notes-container__div__p-tag');
+populateList();
 
-// 	div.appendChild(deleteBtn);
-// 	div.appendChild(pText);
-// 	div.appendChild(pTag);
-// 	notesContainer.appendChild(div);
+// function tagSearch() {
+// 	const searchInput = searchbar.value;
+// 	const searchedTags = tagsInStorage.filter(tag => {
+// 		return tag.includes(searchInput);
+// 	});
+// 	console.log(searchedTags);
+// 	const wantedNotes = notesInStorage.filter(note => {
+// 		for (i = 0; i < searchedTags.length; i++) {
+// 			if (note.tagText === searchedTags[i]) {
+// 				return note;
+// 			}
+// 		}
+// 	});
+// 	notesContainer.innerHTML = '';
+// 	notesContainer.innerHTML = wantedNotes
+// 		.map(note => {
+// 			return `
+//         <li class="note-text">${note.text}</li>
+//         <li class="tag-text">${note.tagText}</li>
+//         `;
+// 		})
+// 		.join('');
+// 	console.log(wantedNotes);
 // }
 
-function populateList(plates = [], platesList) {
-	platesList.innerHTML = plates
-		.map(plate => {
-			return `
-            <li class="note-text">${plate.text}</li>
-            <li class="tag-text">${plate.tagText}</li>
-						<button class="delete-note">X</button>
-            `;
-		})
-		.join('');
-}
-
-// REMOVE tags array in local storage after new tagSearch function
-function tagSearch() {
-	console.log(tagsInStorage);
-	const searchInput = searchbar.value;
-	const searchedTags = tagsInStorage.filter(tag => {
-		return tag.includes(searchInput);
-	});
-	console.log(searchedTags);
-	const wantedNotes = notesInStorage.filter(note => {
-		for (i = 0; i < searchedTags.length; i++) {
-			if (note.tagText === searchedTags[i]) {
-				return note;
-			}
-		}
-	});
-	notesContainer.innerHTML = '';
-	notesContainer.innerHTML = wantedNotes
-		.map(note => {
-			return `
-        <li class="note-text">${note.text}</li>
-        <li class="tag-text">${note.tagText}</li>
-        `;
-		})
-		.join('');
-	console.log(wantedNotes);
-}
-
 // TODO: Delete note function
-
-populateList(notesInStorage, notesContainer);
-
-// addNotes = noteForm
-// notesContainer = notesContainer
-// notes = notesInStorage
-// noteTextInputField = noteTextInputField
-// tagInputField = tagInputField
-// tags = tagsInStorage
-// inputFilter = searchbar
-// *DEPRECATED* filterNotes = submit button for searchbar -> use searchForm (submit event)
