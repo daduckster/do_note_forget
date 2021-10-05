@@ -2,34 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>No NOTE Forget</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>No NOTE Forget</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
-    <header id="header">
-        <h1>DO NOTE FORGET</h1>
-    </header>
+  <header>
 
-    <form class="add-notes">
-        <input type="text" name="note" id="input-note" placeholder="Type your note" required>
-        <input type="submit" value="Add">
+    <h1>DO NOTE FORGET</h1>
 
-    </form>
-    <form>
-        <input type="text" name="note" id="input-tags" placeholder="Type your tag">
-    </form>
-    <form class="filter-notes">
-        <input type="text" name="filter" id="input-filter" placeholder="Tag-search">
-        <input type="submit" value="Search">
+    <form class="note-form">
+      <input type="text" name="note-text" class="note-form__text-input" placeholder="Type your note here" required>
+      <input type="text" name="note-tags" class="note-form__tag-input" placeholder="Tag (optional)">
+      <input type="submit" class="note-form__submit-btn" value="Add">
     </form>
 
-    <div class="notes">
-    </div>
+    <form class="searchbar-form">
+      <input type="text" name="searchbar" class="searchbar-form__search-input" placeholder="Tag-search">
+      <input type="submit" class="searchbar-form__submit-btn" value="Search">
+    </form>
+
+  </header>
+
+  <main class="notes-container"></main>
 
 
 </body>

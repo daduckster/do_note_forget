@@ -1,0 +1,24 @@
+{
+  "name": "note_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daduckster/do_note_forget.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daduckster/do_note_forget/issues"
+  },
+  "homepage": "https://github.com/daduckster/do_note_forget#readme",
+  "dependencies": {
+    "sass": "^1.42.1",
+    "sass-loader": "^12.1.0"
+  }
+}

@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+main .note-text {
+  color: blueviolet;
+}
+/*# sourceMappingURL=main.css.map */

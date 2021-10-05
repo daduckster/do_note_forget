@@ -1,0 +1,31 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+}
+
+h1 {
+	text-align: center;
+}
+
+main {
+	.note-text {
+		color: blueviolet;
+	}
+}
+
+.notes-container {
+	&__div {
+		&__delete-btn {
+		}
+
+		&__p-text {
+		}
+
+		&__p-tag {
+		}
+	}
+}

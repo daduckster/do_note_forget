@@ -1,38 +1,94 @@
-const addNotes = document.querySelector('.add-notes');
-const notesList = document.querySelector('.notes');
-const notes = JSON.parse(localStorage.getItem('notes')) || [];
-const inputNote = document.getElementById('input-note');
-// const deleteNote = document.querySelector('.delete-note');
+// Note Input Form
+const noteForm = document.querySelector('.note-form');
+const noteTextInputField = document.querySelector('.note-form__text-input');
+const tagInputField = document.querySelector('.note-form__tag-input');
 
-const inputTag = document.getElementById('input-tags');
-const tags = JSON.parse(localStorage.getItem('tags')) || [];
+// Search Form
+const searchForm = document.querySelector('.searchbar-form');
+const searchbar = document.querySelector('.searchbar-form__search-input');
 
-const inputFilter = document.getElementById('input-filter');
-const filterNotes = document.querySelector('.filter-notes');
+// Notes Display
+const notesContainer = document.querySelector('.notes-container');
 
-function addNote(e) {
+// Local Storage Access
+const notesInStorage = JSON.parse(localStorage.getItem('notes')) || [];
+// Tags Array for Search Function
+const tagsInStorage = JSON.parse(localStorage.getItem('tags')) || [];
+
+noteForm.addEventListener('submit', createNote);
+searchForm.addEventListener('submit', tagSearch);
+
+function createNote(e) {
 	e.preventDefault();
-	if (inputTag.value) {
-		const text = inputNote.value;
-		const tagText = inputTag.value;
-		let note = { text, tagText };
-		notes.push(note);
-		if (!tags.includes(tagText)) {
-			tags.push(tagText);
-		}
-	} else {
-		const text = inputNote.value;
-		const tagText = '';
-		let note = { text, tagText };
-		notes.push(note);
+
+	if (!noteTextInputField.value) {
+		return;
 	}
 
-	populateList(notes, notesList);
-	localStorage.setItem('notes', JSON.stringify(notes));
-	localStorage.setItem('tags', JSON.stringify(tags));
-	inputTag.value = '';
-	this.reset();
+	const text = noteTextInputField.value;
+	const tag = tagInputField.value || '';
+	const note = { text, tag };
+
+	notesInStorage.push(note);
+
+	updateLocalStorage();
+
+	noteTextInputField.value = '';
+	tagInputField.value = '';
+
+	populateList(notesInStorage, notesContainer);
 }
+
+function updateLocalStorage() {
+	localStorage.setItem('notes', JSON.stringify(notesInStorage));
+	localStorage.setItem('tags', JSON.stringify(tagsInStorage)); // remove
+}
+
+// IDEA: rewrite with createElement?
+// needs classes: note-text / tag-text (maybe rewrite too btw)
+
+/*
+<div>
+<button>X</button>
+<p>text</p> 
+	<p>tag</p>
+</div>
+*/
+
+// PSEUDO CODE
+/* 
+x create div
+x create delete button
+x create p - text
+x create p - tag
+
+x add class for div
+x add class for button
+x add class for p - text
+x add class for p - tag
+
+x append button to div
+x append p - text to div
+x append p - tag to div
+x append div to notesContainer
+*/
+
+// function populateNotesContainer() {
+// 	const div = document.createElement('div');
+// 	const deleteBtn = document.createElement('button');
+// 	const pText = document.createElement('p');
+// 	const pTag = document.createElement('p');
+
+// 	div.classList.add('notes-container__div');
+// 	deleteBtn.classList.add('notes-container__delete-btn');
+// 	pText.classList.add('notes-container__div__p-text');
+// 	pTag.classList.add('notes-container__div__p-tag');
+
+// 	div.appendChild(deleteBtn);
+// 	div.appendChild(pText);
+// 	div.appendChild(pTag);
+// 	notesContainer.appendChild(div);
+// }
 
 function populateList(plates = [], platesList) {
 	platesList.innerHTML = plates
@@ -46,22 +102,23 @@ function populateList(plates = [], platesList) {
 		.join('');
 }
 
+// REMOVE tags array in local storage after new tagSearch function
 function tagSearch() {
-	console.log(tags);
-	const searchInput = inputFilter.value;
-	const searchedTags = tags.filter(tag => {
+	console.log(tagsInStorage);
+	const searchInput = searchbar.value;
+	const searchedTags = tagsInStorage.filter(tag => {
 		return tag.includes(searchInput);
 	});
 	console.log(searchedTags);
-	const wantedNotes = notes.filter(note => {
+	const wantedNotes = notesInStorage.filter(note => {
 		for (i = 0; i < searchedTags.length; i++) {
 			if (note.tagText === searchedTags[i]) {
 				return note;
 			}
 		}
 	});
-	notesList.innerHTML = '';
-	notesList.innerHTML = wantedNotes
+	notesContainer.innerHTML = '';
+	notesContainer.innerHTML = wantedNotes
 		.map(note => {
 			return `
         <li class="note-text">${note.text}</li>
@@ -72,11 +129,15 @@ function tagSearch() {
 	console.log(wantedNotes);
 }
 
-function noteDeleting(e) {
-	console.dir(e);
-}
+// TODO: Delete note function
 
-addNotes.addEventListener('submit', addNote);
-filterNotes.addEventListener('keyup', tagSearch);
-// deleteNote.addEventListener('click', noteDeleting);
-populateList(notes, notesList);
+populateList(notesInStorage, notesContainer);
+
+// addNotes = noteForm
+// notesContainer = notesContainer
+// notes = notesInStorage
+// noteTextInputField = noteTextInputField
+// tagInputField = tagInputField
+// tags = tagsInStorage
+// inputFilter = searchbar
+// *DEPRECATED* filterNotes = submit button for searchbar -> use searchForm (submit event)
