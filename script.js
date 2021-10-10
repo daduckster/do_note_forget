@@ -16,6 +16,7 @@ const notesInStorage = JSON.parse(localStorage.getItem('notes')) || [];
 noteForm.addEventListener('submit', createNote);
 searchbar.addEventListener('keyup', tagSearch);
 searchForm.addEventListener('submit', tagSearch);
+document.addEventListener('scroll', createToTopBtn);
 
 function createNote(e) {
 	e.preventDefault();
@@ -117,6 +118,29 @@ function deleteNote(id) {
 	localStorage.setItem('notes', JSON.stringify(filteredNotes));
 
 	populateList(filteredNotes);
+}
+
+function createToTopBtn() {
+	const backToTopBtn = document.createElement('button');
+	if (notesContainer.lastChild.classList.contains('notes-container__back-to-top-btn')) {
+		console.log('no btn');
+		return;
+	} else {
+		backToTopBtn.textContent = 'To the Top';
+		backToTopBtn.classList.add('notes-container__back-to-top-btn');
+		notesContainer.appendChild(backToTopBtn);
+		backToTopBtn.addEventListener('click', () => returnToTop(backToTopBtn));
+		console.log('btn');
+	}
+	console.log('hi');
+}
+
+function returnToTop(item) {
+	window.scrollTo(0, 0);
+	setTimeout(() => {
+		notesContainer.removeChild(notesContainer.lastChild);
+	}, 1);
+	console.log('return to top');
 }
 
 populateList();
