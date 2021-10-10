@@ -14,6 +14,8 @@ const notesContainer = document.querySelector('.notes-container');
 const notesInStorage = JSON.parse(localStorage.getItem('notes')) || [];
 
 noteForm.addEventListener('submit', createNote);
+searchbar.addEventListener('keyup', tagSearch);
+searchForm.addEventListener('submit', tagSearch);
 
 function createNote(e) {
 	e.preventDefault();
@@ -24,7 +26,8 @@ function createNote(e) {
 
 	const text = noteTextInputField.value;
 	const tag = tagInputField.value || '';
-	const note = { text, tag };
+	const id = `${createID()}${text}`;
+	const note = { text, tag, id };
 
 	notesInStorage.push(note);
 
@@ -33,7 +36,7 @@ function createNote(e) {
 	noteTextInputField.value = '';
 	tagInputField.value = '';
 
-	createNoteDOM(text, tag);
+	createNoteDOM(text, tag, id);
 }
 
 function updateLocalStorage() {
@@ -41,7 +44,7 @@ function updateLocalStorage() {
 }
 
 // ?? arguments: text, tags, *mysterious* ??
-function createNoteDOM(text, tag) {
+function createNoteDOM(text, tag, id) {
 	const div = document.createElement('div');
 	const deleteBtn = document.createElement('button');
 	const pText = document.createElement('p');
@@ -56,6 +59,8 @@ function createNoteDOM(text, tag) {
 	pText.classList.add('notes-container__div__p-text');
 	pTag.classList.add('notes-container__div__p-tag');
 
+	deleteBtn.addEventListener('click', () => deleteNote(id));
+
 	div.appendChild(deleteBtn);
 	div.appendChild(pText);
 	div.appendChild(pTag);
@@ -63,35 +68,55 @@ function createNoteDOM(text, tag) {
 	notesContainer.appendChild(div);
 }
 
-function populateList() {
-	notesInStorage.map(note => createNoteDOM(note.text, note.tag));
+function populateList(data) {
+	const notes = data || notesInStorage;
+	notesContainer.innerHTML = '';
+	notes.map(note => createNoteDOM(note.text, note.tag, note.id));
+}
+
+function tagSearch(e) {
+	e.preventDefault();
+	// clear button creator
+	notesContainer.innerHTML = '';
+	const showAllBtn = document.createElement('button');
+	showAllBtn.textContent = 'Show All';
+	showAllBtn.classList.add('notes-container__show-all-btn');
+	showAllBtn.addEventListener('click', () => {
+		searchbar.value = '';
+		notesContainer.innerHTML = '';
+		populateList();
+	});
+
+	notesContainer.insertBefore(showAllBtn, notesContainer.firstChild);
+
+	if (searchbar.value === '') {
+		notesContainer.removeChild(showAllBtn);
+	}
+
+	const searchInput = searchbar.value;
+	const fittingNotes = notesInStorage.filter(note => note.tag.includes(searchInput));
+
+	if (fittingNotes.length === 0) {
+		const errorMessage = document.createElement('p');
+		errorMessage.textContent = 'No notes found';
+		errorMessage.classList.add('notes-container__error-message');
+		notesContainer.appendChild(errorMessage);
+	} else {
+		fittingNotes.map(({ text, tag, id }) => createNoteDOM(text, tag, id));
+	}
+}
+
+function createID() {
+	const randomID = Math.floor(Math.random() * 1000000000000000000);
+	return randomID;
+}
+
+function deleteNote(id) {
+	const filteredNotes = notesInStorage.filter(note => note.id !== id);
+
+	localStorage.setItem('notes', JSON.stringify(filteredNotes));
+
+	populateList(filteredNotes);
 }
 
 populateList();
-
-// function tagSearch() {
-// 	const searchInput = searchbar.value;
-// 	const searchedTags = tagsInStorage.filter(tag => {
-// 		return tag.includes(searchInput);
-// 	});
-// 	console.log(searchedTags);
-// 	const wantedNotes = notesInStorage.filter(note => {
-// 		for (i = 0; i < searchedTags.length; i++) {
-// 			if (note.tagText === searchedTags[i]) {
-// 				return note;
-// 			}
-// 		}
-// 	});
-// 	notesContainer.innerHTML = '';
-// 	notesContainer.innerHTML = wantedNotes
-// 		.map(note => {
-// 			return `
-//         <li class="note-text">${note.text}</li>
-//         <li class="tag-text">${note.tagText}</li>
-//         `;
-// 		})
-// 		.join('');
-// 	console.log(wantedNotes);
-// }
-
-// TODO: Delete note function
