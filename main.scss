@@ -155,7 +155,7 @@ h1 {
 }
 
 h2 {
-	font-size: 2.19rem;
+	font-size: 2rem;
 	font-weight: 700;
 	margin-top: 7.25rem;
 	color: $white-text;
@@ -176,9 +176,9 @@ main {
 
 		&__search-input {
 			height: 3.06rem;
-			width: 30%;
-			border-radius: 7px;
+			width: 31%;
 			background-color: $input;
+			border-radius: 7px;
 			box-shadow: 0px 0px 50px 0px rgba(22, 30, 45, 1) inset;
 			border: none;
 			color: $text;
@@ -188,20 +188,28 @@ main {
 		}
 
 		&__submit-btn {
-			font-size: 1.13rem;
-			font-weight: 600;
-
-			color: $white-text;
+			position: relative;
 			background: none;
 			cursor: pointer;
-			padding: 0.75rem 2.19rem;
-			border-style: solid;
-			border-width: 0.2rem;
+			padding: 0.75rem 3.3rem;
+			border: double 0.2rem transparent;
 			border-radius: 7px;
-			border-image: linear-gradient($gradient);
-			-webkit-border-image: -webkit-linear-gradient($gradient);
-			border-image-slice: 1;
-			background-clip: padding-box;
+			background: linear-gradient($gradient) border-box;
+			-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+			-webkit-mask-composite: destination-out;
+			mask-composite: exclude;
+			z-index: 1;
+			margin-left: 1.31rem;
+		}
+
+		&__btn-text {
+			position: absolute;
+			left: 75.1rem;
+			margin-top: 0.7rem;
+			font-size: 1.13rem;
+			font-weight: 600;
+			color: $white-text;
+			z-index: 10;
 		}
 	}
 
