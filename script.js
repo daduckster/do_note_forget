@@ -129,13 +129,13 @@ function createToTopBtn() {
 		backToTopBtn.textContent = 'To the Top';
 		backToTopBtn.classList.add('notes-container__back-to-top-btn');
 		notesContainer.appendChild(backToTopBtn);
-		backToTopBtn.addEventListener('click', () => returnToTop(backToTopBtn));
+		backToTopBtn.addEventListener('click', returnToTop);
 		console.log('btn');
 	}
 	console.log('hi');
 }
 
-function returnToTop(item) {
+function returnToTop() {
 	window.scrollTo(0, 0);
 	setTimeout(() => {
 		notesContainer.removeChild(notesContainer.lastChild);

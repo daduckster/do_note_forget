@@ -6,24 +6,50 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Do NOTE Forget</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
   <link rel="stylesheet" href="main.css">
   <script src="script.js" defer></script>
 </head>
 
 <body>
+  <nav class="navbar">
+    <div class="navbar__left">
+      <img class="navbar__img" src="/Logo.svg" alt="Logo">
+    </div>
+    <div class="navbar__right">
+      <a href="#">Home</a>
+      <a href="#">Your notes</a>
+      <a href="#">Information</a>
+      <a href="#">About creator</a>
+    </div>
+  </nav>
   <header>
 
-    <h1>DO NOTE FORGET</h1>
+    <h1>LET'S NOTE!</h1>
 
     <form class="note-form">
-      <input type="text" name="note-text" class="note-form__text-input" placeholder="Type your note here" required>
-      <input type="text" name="note-tags" class="note-form__tag-input" placeholder="Tag (optional)">
-      <input type="submit" class="note-form__submit-btn" value="Add">
+      <label for="note-title">Title (optional)</label>
+      <input type="text" id="note-title" name="note-title" class="note-form__title-input">
+
+      <label for="note-text">Type your note here:</label>
+      <textarea type="text" id="note-text" name="note-text" class="note-form__text-input" required></textarea>
+
+      <label class="note-form__tag-label" for="note-tags">Tag (optional)</label>
+      <div class="note-form__last-line">
+        <input type="text" id="note-tags" name="note-tags" class="note-form__tag-input">
+
+        <input type="submit" class="note-form__submit-btn" value="CREATE NEW NOTE">
+      </div>
+
     </form>
 
     <form class="searchbar-form">
-      <input type="text" name="searchbar" class="searchbar-form__search-input" placeholder="Tag-search">
-      <input type="submit" class="searchbar-form__submit-btn" value="Search">
+      <input type="text" name="searchbar" class="searchbar-form__search-input">
+      <input type="submit" class="searchbar-form__submit-btn" value="Search by tag">
     </form>
 
   </header>
