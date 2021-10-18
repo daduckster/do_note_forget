@@ -183,7 +183,16 @@ main {
 }
 
 main .searchbar-form {
-  text-align: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 main .searchbar-form__search-input {
@@ -198,11 +207,36 @@ main .searchbar-form__search-input {
   font-size: 1rem;
   font-family: 'Poppins', sans-serif;
   padding: 0 1.25rem 0 1.25rem;
+  margin-right: 1.31rem;
+}
+
+main .searchbar-form__btn-text {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .searchbar-form__btn-text p {
+  position: absolute;
+  font-size: 1.13rem;
+  font-weight: 600;
+  color: #fff8ed;
 }
 
 main .searchbar-form__submit-btn {
-  position: relative;
-  background: none;
   cursor: pointer;
   padding: 0.75rem 3.3rem;
   border: double 0.2rem transparent;
@@ -212,18 +246,6 @@ main .searchbar-form__submit-btn {
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
-  z-index: 1;
-  margin-left: 1.31rem;
-}
-
-main .searchbar-form__btn-text {
-  position: absolute;
-  left: 75.1rem;
-  margin-top: 0.7rem;
-  font-size: 1.13rem;
-  font-weight: 600;
-  color: #fff8ed;
-  z-index: 10;
 }
 
 main .notes-container__div__p-text {
