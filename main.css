@@ -6,12 +6,13 @@
 }
 
 body {
-  background-image: url("Background-01.jpg");
-  background-size: cover;
-  background-repeat: repeat;
+  background: url("Background-01.jpg");
+  background-size: 100vw;
+  background: cover repeat fixed;
   color: #fff8ed;
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -50,14 +51,15 @@ h1 {
 }
 
 .note-form {
-  margin: 0.94rem 29vw 0 29vw;
-  padding: 2.50rem 2.5rem;
+  margin: 0.94rem 28.5vw 0 28.5vw;
+  padding: 2.50rem 3rem;
   background-color: rgba(32, 44, 66, 0.61);
   -webkit-box-shadow: 0px 0px 50px 5px #192131;
           box-shadow: 0px 0px 50px 5px #192131;
   border-radius: 7px;
-  font-size: 1.44rem;
+  font-size: 1.5rem;
   font-weight: 600;
+  position: relative;
 }
 
 .note-form__title-input {
@@ -74,13 +76,14 @@ h1 {
   color: #fee5be;
   font-size: 1rem;
   font-family: 'Poppins', sans-serif;
+  padding: 0 1.25rem 0 1.25rem;
 }
 
 .note-form__text-input {
   display: block;
   margin-bottom: 1.25rem;
   margin-top: 0.63rem;
-  min-height: 15.44rem;
+  min-height: 12rem;
   width: 100%;
   border-radius: 7px;
   height: -webkit-fit-content;
@@ -95,6 +98,8 @@ h1 {
   resize: vertical;
   border: none;
   color: #fee5be;
+  z-index: 10;
+  position: relative;
 }
 
 .note-form__last-line {
@@ -121,21 +126,98 @@ h1 {
   color: #fee5be;
   font-size: 1rem;
   font-family: 'Poppins', sans-serif;
+  padding: 0 1.25rem 0 1.25rem;
 }
 
 .note-form__submit-btn {
   background: linear-gradient(95deg, #ff7144, #ffc83e);
-  font-size: 1.50rem;
+  font-size: 1.44rem;
   color: #1a2334;
   font-weight: 700;
+  font-family: 'Poppins', sans-serif;
   height: 3.13rem;
   padding: 0.44rem 1.6rem 0.4rem 1.6rem;
   margin-top: 0.81rem;
   border-radius: 7px;
   border: none;
+  z-index: 4;
+  cursor: pointer;
 }
 
-.notes-container__div__p-text {
+.note-form__can-img1 {
+  position: absolute;
+  opacity: 0.6;
+  width: 47.25rem;
+  height: auto;
+  left: 35rem;
+  top: 17rem;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+.note-form__can-img2 {
+  position: absolute;
+  opacity: 0.8;
+  width: 47.25rem;
+  height: auto;
+  left: 35rem;
+  top: 17rem;
+  z-index: 0;
+}
+
+h2 {
+  font-size: 2.19rem;
+  font-weight: 700;
+  margin-top: 7.25rem;
+  color: #fff8ed;
+  margin-left: 16.5vw;
+}
+
+main {
+  margin: 0.88rem 16.5vw 0 16.5vw;
+  padding: 2.50rem 8.13rem;
+  background-color: rgba(32, 44, 66, 0.61);
+  -webkit-box-shadow: 0px 0px 50px 5px #192131;
+          box-shadow: 0px 0px 50px 5px #192131;
+  border-radius: 7px;
+}
+
+main .searchbar-form {
+  text-align: end;
+}
+
+main .searchbar-form__search-input {
+  height: 3.06rem;
+  width: 30%;
+  border-radius: 7px;
+  background-color: #1a2334;
+  -webkit-box-shadow: 0px 0px 50px 0px #161e2d inset;
+          box-shadow: 0px 0px 50px 0px #161e2d inset;
+  border: none;
+  color: #fee5be;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  padding: 0 1.25rem 0 1.25rem;
+}
+
+main .searchbar-form__submit-btn {
+  font-size: 1.13rem;
+  font-weight: 600;
+  color: #fff8ed;
+  background: none;
+  cursor: pointer;
+  padding: 0.75rem 2.19rem;
+  border-style: solid;
+  border-width: 0.2rem;
+  border-radius: 7px;
+  -o-border-image: linear-gradient(95deg, #ff7144, #ffc83e);
+     border-image: linear-gradient(95deg, #ff7144, #ffc83e);
+  -webkit-border-image: -webkit-linear-gradient(95deg, #ff7144, #ffc83e);
+  border-image-slice: 1;
+  background-clip: padding-box;
+}
+
+main .notes-container__div__p-text {
   color: blueviolet;
 }
 /*# sourceMappingURL=main.css.map */
