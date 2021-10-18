@@ -13,12 +13,13 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 }
 
 body {
-	background-image: url("Background-01.jpg");
-	background-size: cover;
-	background-repeat: repeat;
+	background: url("Background-01.jpg");
+	background-size: 100vw;
+	background: cover repeat fixed;
 	color: $white-text;
 	font-family: 'Poppins', sans-serif;
 	font-size: 16px;
+	overflow-x: hidden;
 }
 
 .navbar {
@@ -51,13 +52,14 @@ h1 {
 }
 
 .note-form {
-	margin: 0.94rem 29vw 0 29vw;
-	padding: 2.50rem 2.5rem;
+	margin: 0.94rem 28.5vw 0 28.5vw;
+	padding: 2.50rem 3rem;
 	background-color: $field;
 	box-shadow: 0px 0px 50px 5px $box-shadow;
 	border-radius: 7px;
-	font-size: 1.44rem;
+	font-size: 1.5rem;
 	font-weight: 600;
+	position: relative;
 
 	&__title-input {
 		display: block;
@@ -72,13 +74,14 @@ h1 {
 		color: $text;
 		font-size: 1rem;
 		font-family: 'Poppins', sans-serif;
+		padding: 0 1.25rem 0 1.25rem;
 	}
 
 	&__text-input {
 		display: block;
 		margin-bottom: 1.25rem;
 		margin-top: 0.63rem;
-		min-height: 15.44rem;
+		min-height: 12rem;
 		width: 100%;
 		border-radius: 7px;
 		height: fit-content;
@@ -90,6 +93,8 @@ h1 {
 		resize: vertical;
 		border: none;
 		color: $text;
+		z-index: 10;
+		position: relative;
 	}
 
 	&__last-line {
@@ -109,31 +114,108 @@ h1 {
 		color: $text;
 		font-size: 1rem;
 		font-family: 'Poppins', sans-serif;
+		padding: 0 1.25rem 0 1.25rem;
 	}
 
 	&__submit-btn {
 		background: linear-gradient($gradient);
-		font-size: 1.50rem;
+		font-size: 1.44rem;
 		color: $input;
 		font-weight: 700;
+		font-family: 'Poppins', sans-serif;
 		height: 3.13rem;
 		padding: 0.44rem 1.6rem 0.4rem 1.6rem;
 		margin-top: 0.81rem;
 		border-radius: 7px;
 		border: none;
+		z-index: 4;
+		cursor: pointer;
+	}
+
+	&__can-img1 {
+		position: absolute;
+		opacity: 0.6;
+		width: 47.25rem;
+		height: auto;
+		left: 35rem;
+		top: 17rem;
+		z-index: 1;
+		mix-blend-mode: multiply;
+	}
+
+	&__can-img2 {
+		position: absolute;
+		opacity: 0.8;
+		width: 47.25rem;
+		height: auto;
+		left: 35rem;
+		top: 17rem;
+		z-index: 0;
 	}
 }
 
-.notes-container {
-	&__div {
-		&__delete-btn {
+h2 {
+	font-size: 2.19rem;
+	font-weight: 700;
+	margin-top: 7.25rem;
+	color: $white-text;
+	margin-left: 16.5vw;
+}
+
+main {
+	margin: 0.88rem 16.5vw 0 16.5vw;
+	padding: 2.50rem 8.13rem;
+	background-color: $field;
+	box-shadow: 0px 0px 50px 5px $box-shadow;
+	border-radius: 7px;
+	// position: relative;
+	// z-index: 9;
+
+	.searchbar-form {
+		text-align: end;
+
+		&__search-input {
+			height: 3.06rem;
+			width: 30%;
+			border-radius: 7px;
+			background-color: $input;
+			box-shadow: 0px 0px 50px 0px rgba(22, 30, 45, 1) inset;
+			border: none;
+			color: $text;
+			font-size: 1rem;
+			font-family: 'Poppins', sans-serif;
+			padding: 0 1.25rem 0 1.25rem;
 		}
 
-		&__p-text {
-			color: blueviolet;
-		}
+		&__submit-btn {
+			font-size: 1.13rem;
+			font-weight: 600;
 
-		&__p-tag {
+			color: $white-text;
+			background: none;
+			cursor: pointer;
+			padding: 0.75rem 2.19rem;
+			border-style: solid;
+			border-width: 0.2rem;
+			border-radius: 7px;
+			border-image: linear-gradient($gradient);
+			-webkit-border-image: -webkit-linear-gradient($gradient);
+			border-image-slice: 1;
+			background-clip: padding-box;
+		}
+	}
+
+	.notes-container {
+		&__div {
+			&__delete-btn {
+			}
+
+			&__p-text {
+				color: blueviolet;
+			}
+
+			&__p-tag {
+			}
 		}
 	}
 }
