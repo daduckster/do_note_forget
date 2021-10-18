@@ -166,7 +166,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.19rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-top: 7.25rem;
   color: #fff8ed;
@@ -188,9 +188,9 @@ main .searchbar-form {
 
 main .searchbar-form__search-input {
   height: 3.06rem;
-  width: 30%;
-  border-radius: 7px;
+  width: 31%;
   background-color: #1a2334;
+  border-radius: 7px;
   -webkit-box-shadow: 0px 0px 50px 0px #161e2d inset;
           box-shadow: 0px 0px 50px 0px #161e2d inset;
   border: none;
@@ -201,20 +201,29 @@ main .searchbar-form__search-input {
 }
 
 main .searchbar-form__submit-btn {
+  position: relative;
+  background: none;
+  cursor: pointer;
+  padding: 0.75rem 3.3rem;
+  border: double 0.2rem transparent;
+  border-radius: 7px;
+  background: linear-gradient(95deg, #ff7144, #ffc83e) border-box;
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff)) padding-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff));
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  z-index: 1;
+  margin-left: 1.31rem;
+}
+
+main .searchbar-form__btn-text {
+  position: absolute;
+  left: 75.1rem;
+  margin-top: 0.7rem;
   font-size: 1.13rem;
   font-weight: 600;
   color: #fff8ed;
-  background: none;
-  cursor: pointer;
-  padding: 0.75rem 2.19rem;
-  border-style: solid;
-  border-width: 0.2rem;
-  border-radius: 7px;
-  -o-border-image: linear-gradient(95deg, #ff7144, #ffc83e);
-     border-image: linear-gradient(95deg, #ff7144, #ffc83e);
-  -webkit-border-image: -webkit-linear-gradient(95deg, #ff7144, #ffc83e);
-  border-image-slice: 1;
-  background-clip: padding-box;
+  z-index: 10;
 }
 
 main .notes-container__div__p-text {
