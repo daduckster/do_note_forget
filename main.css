@@ -201,7 +201,6 @@ main .searchbar-form {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  border: 1px solid white;
 }
 
 main .searchbar-form__search-input {
