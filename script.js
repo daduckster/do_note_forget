@@ -12,9 +12,14 @@ const searchbar = document.querySelector('.searchbar-form__search-input');
 const notesContainer = document.querySelector('.notes-container');
 
 // Local Storage Access
-const notesInStorage = JSON.parse(localStorage.getItem('notes')) || [];
+let notesInStorage = JSON.parse(localStorage.getItem('notes')) || [];
 
-noteForm.addEventListener('submit', createNote);
+const yourNotesTitle = document.querySelector('.your-notes-title');
+
+noteForm.addEventListener('submit', e => {
+	createNote(e);
+	yourNotesTitle.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+});
 searchbar.addEventListener('keyup', tagSearch);
 searchForm.addEventListener('submit', tagSearch);
 document.addEventListener('scroll', createToTopBtn);
@@ -25,25 +30,24 @@ function createNote(e) {
 	if (!noteTextInputField.value) {
 		return;
 	}
-	const title = titleTextInputField.value;
+	const title = titleTextInputField.value || '';
 	const text = noteTextInputField.value;
 	const tag = tagInputField.value || '';
 	const id = `${createID()}${text}`;
 	const note = { title, text, tag, id };
 
-	notesInStorage.push(note);
-
-	updateLocalStorage();
+	updateLocalStorage(note);
 
 	titleTextInputField.value = '';
 	noteTextInputField.value = '';
 	tagInputField.value = '';
 
-	createNoteDOM(title, text, tag, id);
+	populateList();
 }
 
-function updateLocalStorage() {
-	localStorage.setItem('notes', JSON.stringify(notesInStorage));
+function updateLocalStorage(note) {
+	localStorage.setItem('notes', JSON.stringify([ ...notesInStorage, note ]));
+	notesInStorage = JSON.parse(localStorage.getItem('notes'));
 }
 
 // ?? arguments: text, tags, *mysterious* ??
@@ -54,13 +58,13 @@ function createNoteDOM(title, text, tag, id) {
 	const pText = document.createElement('p');
 	const pTag = document.createElement('p');
 
-	deleteBtn.textContent = 'x';
+	deleteBtn.textContent = '✕';
 	pTitle.textContent = title;
 	pText.textContent = text;
 	pTag.textContent = tag;
 
 	div.classList.add('notes-container__div');
-	deleteBtn.classList.add('notes-container__delete-btn');
+	deleteBtn.classList.add('notes-container__div__delete-btn');
 	pTitle.classList.add('notes-container__div__p-title');
 	pText.classList.add('notes-container__div__p-text');
 	pTag.classList.add('notes-container__div__p-tag');
@@ -73,12 +77,14 @@ function createNoteDOM(title, text, tag, id) {
 	div.appendChild(pTag);
 
 	notesContainer.insertBefore(div, notesContainer.firstChild);
-	div.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
 }
 
-function populateList(data) {
-	const notes = data || notesInStorage;
+function populateList() {
+	const notes = notesInStorage;
 	notesContainer.innerHTML = '';
+	if (notes.length === 0) {
+		return;
+	}
 	notes.map(note => createNoteDOM(note.title, note.text, note.tag, note.id));
 }
 
@@ -88,7 +94,7 @@ function tagSearch(e) {
 	notesContainer.innerHTML = '';
 	const showAllBtn = document.createElement('button');
 	showAllBtn.textContent = 'Show All';
-	showAllBtn.classList.add('notes-container__show-all-btn');
+	showAllBtn.classList.add('notes-container__div__show-all-btn');
 	showAllBtn.addEventListener('click', () => {
 		searchbar.value = '';
 		notesContainer.innerHTML = '';
@@ -106,8 +112,8 @@ function tagSearch(e) {
 
 	if (fittingNotes.length === 0) {
 		const errorMessage = document.createElement('p');
-		errorMessage.textContent = 'No notes found';
-		errorMessage.classList.add('notes-container__error-message');
+		errorMessage.textContent = 'No notes found.  Try another Tag!';
+		errorMessage.classList.add('notes-container__div__error-message');
 		notesContainer.appendChild(errorMessage);
 	} else {
 		fittingNotes.map(({ title, text, tag, id }) => createNoteDOM(title, text, tag, id));
@@ -121,18 +127,21 @@ function createID() {
 
 function deleteNote(id) {
 	const filteredNotes = notesInStorage.filter(note => note.id !== id);
-
 	localStorage.setItem('notes', JSON.stringify(filteredNotes));
+	notesInStorage = JSON.parse(localStorage.getItem('notes'));
 
-	populateList(filteredNotes);
+	populateList();
 }
 
 function createToTopBtn() {
+	if (notesInStorage.length === 0) {
+		return;
+	}
 	const backToTopBtn = document.createElement('button');
 	if (notesContainer.lastChild.classList.contains('notes-container__back-to-top-btn')) {
 		return;
 	} else {
-		backToTopBtn.textContent = 'To the Top';
+		backToTopBtn.textContent = 'To the top ▲';
 		backToTopBtn.classList.add('notes-container__back-to-top-btn');
 		notesContainer.appendChild(backToTopBtn);
 		backToTopBtn.addEventListener('click', returnToTop);
