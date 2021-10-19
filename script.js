@@ -1,5 +1,6 @@
 // Note Input Form
 const noteForm = document.querySelector('.note-form');
+const titleTextInputField = document.querySelector('.note-form__title-input');
 const noteTextInputField = document.querySelector('.note-form__text-input');
 const tagInputField = document.querySelector('.note-form__tag-input');
 
@@ -24,20 +25,21 @@ function createNote(e) {
 	if (!noteTextInputField.value) {
 		return;
 	}
-
+	const title = titleTextInputField.value;
 	const text = noteTextInputField.value;
 	const tag = tagInputField.value || '';
 	const id = `${createID()}${text}`;
-	const note = { text, tag, id };
+	const note = { title, text, tag, id };
 
 	notesInStorage.push(note);
 
 	updateLocalStorage();
 
+	titleTextInputField.value = '';
 	noteTextInputField.value = '';
 	tagInputField.value = '';
 
-	createNoteDOM(text, tag, id);
+	createNoteDOM(title, text, tag, id);
 }
 
 function updateLocalStorage() {
@@ -45,34 +47,39 @@ function updateLocalStorage() {
 }
 
 // ?? arguments: text, tags, *mysterious* ??
-function createNoteDOM(text, tag, id) {
+function createNoteDOM(title, text, tag, id) {
 	const div = document.createElement('div');
 	const deleteBtn = document.createElement('button');
+	const pTitle = document.createElement('p');
 	const pText = document.createElement('p');
 	const pTag = document.createElement('p');
 
 	deleteBtn.textContent = 'x';
+	pTitle.textContent = title;
 	pText.textContent = text;
 	pTag.textContent = tag;
 
 	div.classList.add('notes-container__div');
 	deleteBtn.classList.add('notes-container__delete-btn');
+	pTitle.classList.add('notes-container__div__p-title');
 	pText.classList.add('notes-container__div__p-text');
 	pTag.classList.add('notes-container__div__p-tag');
 
 	deleteBtn.addEventListener('click', () => deleteNote(id));
 
+	div.appendChild(pTitle);
 	div.appendChild(deleteBtn);
 	div.appendChild(pText);
 	div.appendChild(pTag);
 
-	notesContainer.appendChild(div);
+	notesContainer.insertBefore(div, notesContainer.firstChild);
+	div.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
 }
 
 function populateList(data) {
 	const notes = data || notesInStorage;
 	notesContainer.innerHTML = '';
-	notes.map(note => createNoteDOM(note.text, note.tag, note.id));
+	notes.map(note => createNoteDOM(note.title, note.text, note.tag, note.id));
 }
 
 function tagSearch(e) {
@@ -103,7 +110,7 @@ function tagSearch(e) {
 		errorMessage.classList.add('notes-container__error-message');
 		notesContainer.appendChild(errorMessage);
 	} else {
-		fittingNotes.map(({ text, tag, id }) => createNoteDOM(text, tag, id));
+		fittingNotes.map(({ title, text, tag, id }) => createNoteDOM(title, text, tag, id));
 	}
 }
 
@@ -123,16 +130,13 @@ function deleteNote(id) {
 function createToTopBtn() {
 	const backToTopBtn = document.createElement('button');
 	if (notesContainer.lastChild.classList.contains('notes-container__back-to-top-btn')) {
-		console.log('no btn');
 		return;
 	} else {
 		backToTopBtn.textContent = 'To the Top';
 		backToTopBtn.classList.add('notes-container__back-to-top-btn');
 		notesContainer.appendChild(backToTopBtn);
 		backToTopBtn.addEventListener('click', returnToTop);
-		console.log('btn');
 	}
-	console.log('hi');
 }
 
 function returnToTop() {
@@ -140,7 +144,6 @@ function returnToTop() {
 	setTimeout(() => {
 		notesContainer.removeChild(notesContainer.lastChild);
 	}, 1);
-	console.log('return to top');
 }
 
 populateList();
