@@ -90,21 +90,11 @@ function populateList() {
 
 function tagSearch(e) {
 	e.preventDefault();
-	// clear button creator
 	notesContainer.innerHTML = '';
-	const showAllBtn = document.createElement('button');
-	showAllBtn.textContent = 'Show All';
-	showAllBtn.classList.add('notes-container__div__show-all-btn');
-	showAllBtn.addEventListener('click', () => {
-		searchbar.value = '';
-		notesContainer.innerHTML = '';
-		populateList();
-	});
-
-	notesContainer.insertBefore(showAllBtn, notesContainer.firstChild);
 
 	if (searchbar.value === '') {
-		notesContainer.removeChild(showAllBtn);
+		populateList();
+		return;
 	}
 
 	const searchInput = searchbar.value;
@@ -115,8 +105,24 @@ function tagSearch(e) {
 		errorMessage.textContent = 'No notes found.  Try another Tag!';
 		errorMessage.classList.add('notes-container__div__error-message');
 		notesContainer.appendChild(errorMessage);
+		const showAllBtn = document.createElement('button');
+		showAllBtn.textContent = 'Show All';
+		showAllBtn.classList.add('notes-container__div__show-all-btn');
+		showAllBtn.addEventListener('click', () => {
+			searchbar.value = '';
+			populateList();
+		});
+		notesContainer.insertBefore(showAllBtn, notesContainer.firstChild);
 	} else {
 		fittingNotes.map(({ title, text, tag, id }) => createNoteDOM(title, text, tag, id));
+		const showAllBtn = document.createElement('button');
+		showAllBtn.textContent = 'Show All';
+		showAllBtn.classList.add('notes-container__div__show-all-btn');
+		showAllBtn.addEventListener('click', () => {
+			searchbar.value = '';
+			populateList();
+		});
+		notesContainer.insertBefore(showAllBtn, notesContainer.firstChild);
 	}
 }
 
@@ -154,5 +160,14 @@ function returnToTop() {
 		notesContainer.removeChild(notesContainer.lastChild);
 	}, 1);
 }
+
+// hide backToTopBtn when manually scolling to top of page
+window.addEventListener('scroll', () => {
+	if (window.scrollY <= 200) {
+		if (notesContainer.lastChild.classList.contains('notes-container__back-to-top-btn')) {
+			notesContainer.removeChild(notesContainer.lastChild);
+		}
+	}
+});
 
 populateList();
