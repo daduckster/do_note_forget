@@ -3,6 +3,7 @@ $box-shadow: #192131;
 $field: rgba(32, 44, 66, 0.61);
 $text: #fee5be;
 $white-text: #fff8ed;
+$title: #ff7144;
 $gradient: 95deg, #ff7144, #ffc83e;
 $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 
@@ -18,7 +19,7 @@ body {
 	background: cover repeat fixed;
 	color: $white-text;
 	font-family: 'Poppins', sans-serif;
-	font-size: 16px;
+	font-size: 18px;
 	overflow-x: hidden;
 }
 
@@ -38,6 +39,7 @@ body {
 		color: $text;
 		padding-left: 1.5rem;
 		font-weight: 300;
+		font-size: 1rem;
 	}
 }
 
@@ -72,7 +74,7 @@ h1 {
 		background-color: $input;
 		box-shadow: 0px 0px 50px 0px rgba(22, 30, 45, 1) inset;
 		color: $text;
-		font-size: 1rem;
+		font-size: 1.13rem;
 		font-family: 'Poppins', sans-serif;
 		padding: 0 1.25rem 0 1.25rem;
 	}
@@ -85,7 +87,7 @@ h1 {
 		width: 100%;
 		border-radius: 7px;
 		height: fit-content;
-		font-size: 1rem;
+		font-size: 1.13rem;
 		font-family: 'Poppins', sans-serif;
 		padding: 1rem 1.25rem;
 		background-color: $input;
@@ -112,7 +114,7 @@ h1 {
 		box-shadow: 0px 0px 50px 0px rgba(22, 30, 45, 1) inset;
 		border: none;
 		color: $text;
-		font-size: 1rem;
+		font-size: 1.13rem;
 		font-family: 'Poppins', sans-serif;
 		padding: 0 1.25rem 0 1.25rem;
 	}
@@ -163,13 +165,14 @@ h2 {
 }
 
 main {
-	margin: 0.88rem 16.5vw 0 16.5vw;
-	padding: 2.50rem 8.13rem;
+	margin: 0.88rem 16.5vw 5rem 16.5vw;
+	padding: 2.50rem 8.13rem 8.13rem 8.13rem;
 	background-color: $field;
 	box-shadow: 0px 0px 50px 5px $box-shadow;
 	border-radius: 7px;
-	// position: relative;
-	// z-index: 9;
+	position: relative;
+	z-index: 9;
+	min-height: 120vh;
 
 	.searchbar-form {
 		display: flex;
@@ -219,14 +222,30 @@ main {
 
 	.notes-container {
 		&__div {
+			background-color: $input;
+			box-shadow: 0px 0px 50px 0px rgba(22, 30, 45, 1) inset;
+			color: $text;
+			margin-top: 2.50rem;
+			border-radius: 7px;
+			padding: 1.88rem 2.50rem;
+			scroll-margin: 13rem;
+
+			&__p-title {
+				font-size: 1.31rem;
+				font-weight: 700;
+				color: $title;
+				display: inline-block;
+			}
+
 			&__delete-btn {
+				float: right;
 			}
 
 			&__p-text {
-				color: blueviolet;
 			}
 
 			&__p-tag {
+				float: right;
 			}
 		}
 	}
