@@ -5,8 +5,8 @@ const noteTextInputField = document.querySelector('.note-form__text-input');
 const tagInputField = document.querySelector('.note-form__tag-input');
 
 // Search Form
-const searchForm = document.querySelector('.searchbar-form');
-const searchbar = document.querySelector('.searchbar-form__search-input');
+const searchForm = document.querySelector('.searchbar-form-container__searchbar-form');
+const searchbar = document.querySelector('.searchbar-form-container__searchbar-form__search-input');
 
 // Notes Display
 const notesContainer = document.querySelector('.notes-container');

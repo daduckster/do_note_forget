@@ -122,7 +122,7 @@ h1 {
 .note-form__tag-input {
   margin-top: 0.81rem;
   height: 3.13rem;
-  width: 45%;
+  width: 20vw;
   border-radius: 7px;
   background-color: #1a2334;
   -webkit-box-shadow: 0px 0px 50px 0px #161e2d inset;
@@ -190,7 +190,35 @@ main {
   min-height: 120vh;
 }
 
-main .searchbar-form {
+main .searchbar-form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .searchbar-form-container__show-all-btn {
+  cursor: pointer;
+  padding: 0rem 2.2rem;
+  background: none;
+  border: solid 0.2rem #fee5be;
+  border-radius: 7px;
+  font-size: 1.13rem;
+  font-weight: 600;
+  color: #fee5be;
+}
+
+main .searchbar-form-container__show-all-btn__hidden {
+  visibility: hidden;
+}
+
+main .searchbar-form-container__searchbar-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -203,9 +231,9 @@ main .searchbar-form {
           justify-content: flex-end;
 }
 
-main .searchbar-form__search-input {
+main .searchbar-form-container__searchbar-form__search-input {
   height: 3.06rem;
-  width: 31%;
+  width: 20vw;
   background-color: #1a2334;
   border-radius: 7px;
   -webkit-box-shadow: 0px 0px 50px 0px #161e2d inset;
@@ -218,7 +246,7 @@ main .searchbar-form__search-input {
   margin-right: 1.31rem;
 }
 
-main .searchbar-form__btn-text {
+main .searchbar-form-container__searchbar-form__btn-text {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -237,16 +265,16 @@ main .searchbar-form__btn-text {
           align-items: center;
 }
 
-main .searchbar-form__btn-text p {
+main .searchbar-form-container__searchbar-form__btn-text p {
   position: absolute;
   font-size: 1.13rem;
   font-weight: 600;
   color: #fff8ed;
 }
 
-main .searchbar-form__submit-btn {
+main .searchbar-form-container__searchbar-form__submit-btn {
   cursor: pointer;
-  padding: 0.75rem 3.3rem;
+  padding: 0.9rem 3.3rem;
   border: double 0.2rem transparent;
   border-radius: 7px;
   background: linear-gradient(95deg, #ff7144, #ffc83e) border-box;

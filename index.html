@@ -52,13 +52,17 @@
 
   <h2 class="your-notes-title">YOUR NOTES⇣</h2>
   <main>
-    <form class="searchbar-form">
-      <input type="text" name="searchbar" class="searchbar-form__search-input">
-      <div class="searchbar-form__btn-text">
-        <p>Search by Tag</p>
-        <input type="submit" class="searchbar-form__submit-btn" value="Search by Tag">
-      </div>
-    </form>
+    <div class="searchbar-form-container">
+      <input type="submit" class="searchbar-form-container__show-all-btn" value="Show All">
+      <form class="searchbar-form-container__searchbar-form">
+        <input type="text" name="searchbar" class="searchbar-form-container__searchbar-form__search-input">
+        <div class="searchbar-form-container__searchbar-form__btn-text">
+          <p>Search by Tag</p>
+          <input type="submit" class="searchbar-form-container__searchbar-form__submit-btn" value="Search by Tag">
+        </div>
+      </form>
+    </div>
+
     <div class="notes-container"></div>
   </main>
 
