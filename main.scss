@@ -4,6 +4,7 @@ $field: rgba(32, 44, 66, 0.61);
 $text: #fee5be;
 $white-text: #fff8ed;
 $title: #ff7144;
+$tag: #ffc73e;
 $gradient: 95deg, #ff7144, #ffc83e;
 $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 
@@ -11,6 +12,10 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+html {
+	overflow-x: hidden;
 }
 
 body {
@@ -139,7 +144,7 @@ h1 {
 		opacity: 0.6;
 		width: 47.25rem;
 		height: auto;
-		left: 35rem;
+		left: 32.7rem;
 		top: 17rem;
 		z-index: 1;
 		mix-blend-mode: multiply;
@@ -150,7 +155,7 @@ h1 {
 		opacity: 0.8;
 		width: 47.25rem;
 		height: auto;
-		left: 35rem;
+		left: 32.7rem;
 		top: 17rem;
 		z-index: 0;
 	}
@@ -178,6 +183,7 @@ main {
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-end;
+		border: 1px solid white;
 
 		&__search-input {
 			height: 3.06rem;
@@ -228,25 +234,75 @@ main {
 			margin-top: 2.50rem;
 			border-radius: 7px;
 			padding: 1.88rem 2.50rem;
-			scroll-margin: 13rem;
 
 			&__p-title {
 				font-size: 1.31rem;
 				font-weight: 700;
 				color: $title;
 				display: inline-block;
+				padding-bottom: 0.94rem;
+				overflow-wrap: break-word;
 			}
 
 			&__delete-btn {
+				cursor: pointer;
 				float: right;
+				color: $text;
+				font-size: 1.13rem;
+				border: none;
+				border-radius: 7px;
+				background: none;
 			}
 
 			&__p-text {
+				width: 100%;
+				padding-bottom: 0.94rem;
+				overflow-wrap: break-word;
 			}
 
 			&__p-tag {
-				float: right;
+				text-align: end;
+				color: $tag;
+				font-size: 1rem;
+				opacity: 0.75;
+				overflow-wrap: break-word;
+			}
+
+			&__error-message {
+				font-size: 1.4rem;
+				font-weight: 600;
+				color: $title;
+				margin-top: 1.5rem;
+			}
+
+			&__show-all-btn {
+				cursor: pointer;
+				padding: 0.5rem 2.19rem;
+				background: none;
+				border: solid 0.2rem $text;
+				border-radius: 7px;
+				font-size: 1.13rem;
+				font-weight: 600;
+				color: $text;
 			}
 		}
+
+		&__back-to-top-btn {
+			cursor: pointer;
+			padding: 1rem 2rem;
+			color: $text;
+			font-size: 1.13rem;
+			border: none;
+			border-radius: 7px;
+			background: none;
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			opacity: 0.5;
+		}
 	}
+}
+
+.your-notes-title {
+	scroll-margin: 10rem;
 }
