@@ -113,7 +113,7 @@ h1 {
 	&__tag-input {
 		margin-top: 0.81rem;
 		height: 3.13rem;
-		width: 45%;
+		width: 20vw;
 		border-radius: 7px;
 		background-color: $input;
 		box-shadow: 0px 0px 50px 0px rgba(22, 30, 45, 1) inset;
@@ -179,49 +179,70 @@ main {
 	z-index: 9;
 	min-height: 120vh;
 
-	.searchbar-form {
+	.searchbar-form-container {
 		display: flex;
 		flex-direction: row;
-		justify-content: flex-end;
+		justify-content: space-between;
 
-		&__search-input {
-			height: 3.06rem;
-			width: 31%;
-			background-color: $input;
+		&__show-all-btn {
+			cursor: pointer;
+			padding: 0rem 2.2rem;
+			background: none;
+			border: solid 0.2rem $text;
 			border-radius: 7px;
-			box-shadow: 0px 0px 50px 0px rgba(22, 30, 45, 1) inset;
-			border: none;
+			font-size: 1.13rem;
+			font-weight: 600;
 			color: $text;
-			font-size: 1rem;
-			font-family: 'Poppins', sans-serif;
-			padding: 0 1.25rem 0 1.25rem;
-			margin-right: 1.31rem;
-		}
-		&__btn-text {
-			width: fit-content;
-			height: fit-content;
-			position: relative;
-			display: flex;
-			justify-content: center;
-			align-items: center;
 
-			p {
-				position: absolute;
-				font-size: 1.13rem;
-				font-weight: 600;
-				color: $white-text;
+			&__hidden {
+				visibility: hidden;
 			}
 		}
 
-		&__submit-btn {
-			cursor: pointer;
-			padding: 0.75rem 3.3rem;
-			border: double 0.2rem transparent;
-			border-radius: 7px;
-			background: linear-gradient($gradient) border-box;
-			-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-			-webkit-mask-composite: destination-out;
-			mask-composite: exclude;
+		&__searchbar-form {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+
+			&__search-input {
+				height: 3.06rem;
+				width: 20vw;
+				background-color: $input;
+				border-radius: 7px;
+				box-shadow: 0px 0px 50px 0px rgba(22, 30, 45, 1) inset;
+				border: none;
+				color: $text;
+				font-size: 1rem;
+				font-family: 'Poppins', sans-serif;
+				padding: 0 1.25rem 0 1.25rem;
+				margin-right: 1.31rem;
+			}
+			&__btn-text {
+				width: fit-content;
+				height: fit-content;
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				p {
+					position: absolute;
+					font-size: 1.13rem;
+					font-weight: 600;
+					color: $white-text;
+				}
+			}
+
+			&__submit-btn {
+				cursor: pointer;
+				padding: 0.9rem 3.3rem;
+				border: double 0.2rem transparent;
+				border-radius: 7px;
+				background: linear-gradient($gradient) border-box;
+				-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+				-webkit-mask-composite: destination-out;
+				mask-composite: exclude;
+			}
 		}
 	}
 
