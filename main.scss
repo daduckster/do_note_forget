@@ -25,7 +25,7 @@ body {
 	color: $white-text;
 	font-family: 'Poppins', sans-serif;
 	font-size: 18px;
-	overflow-x: hidden;
+	overflow-x: clip;
 }
 
 .navbar {
@@ -39,18 +39,23 @@ body {
 		height: auto;
 	}
 
+	&__right {
+		text-align: right;
+	}
+
 	a {
 		text-decoration: none;
 		color: $text;
 		padding-left: 1.5rem;
 		font-weight: 300;
-		font-size: 1rem;
+		font-size: 0.89em;
+		align-self: end;
 	}
 }
 
 h1 {
 	text-align: center;
-	font-size: 4.63rem;
+	font-size: 4.2em;
 	padding-top: 5.50rem;
 	font-weight: 700;
 	background: -webkit-linear-gradient($text-gradient);
@@ -64,9 +69,13 @@ h1 {
 	background-color: $field;
 	box-shadow: 0px 0px 50px 5px $box-shadow;
 	border-radius: 7px;
-	font-size: 1.5rem;
+
 	font-weight: 600;
 	position: relative;
+
+	&__label {
+		font-size: 1.3em;
+	}
 
 	&__title-input {
 		display: block;
@@ -79,7 +88,7 @@ h1 {
 		background-color: $input;
 		box-shadow: 0px 0px 50px 0px rgba(22, 30, 45, 1) inset;
 		color: $text;
-		font-size: 1.13rem;
+		font-size: 1em;
 		font-family: 'Poppins', sans-serif;
 		padding: 0 1.25rem 0 1.25rem;
 
@@ -87,11 +96,11 @@ h1 {
 			transition: background-color 5000s ease-in-out 0s;
 			-webkit-text-fill-color: $text;
 			caret-color: $text;
-			-webkit-text-font-size: 1.13rem;
+			-webkit-text-font-size: 1em;
 		}
 		&:-webkit-autofill::first-line {
 			font-family: 'Poppins', sans-serif;
-			font-size: 1.13rem;
+			font-size: 1em;
 		}
 
 		&:hover {
@@ -112,7 +121,7 @@ h1 {
 		width: 100%;
 		border-radius: 7px;
 		height: fit-content;
-		font-size: 1.13rem;
+		font-size: 1em;
 		font-family: 'Poppins', sans-serif;
 		padding: 1rem 1.25rem;
 		background-color: $input;
@@ -127,11 +136,11 @@ h1 {
 			transition: background-color 5000s ease-in-out 0s;
 			-webkit-text-fill-color: $text;
 			caret-color: $text;
-			-webkit-text-font-size: 1.13rem;
+			-webkit-text-font-size: 1em;
 		}
 		&:-webkit-autofill::first-line {
 			font-family: 'Poppins', sans-serif;
-			font-size: 1.13rem;
+			font-size: 1em;
 		}
 
 		&:hover {
@@ -148,6 +157,12 @@ h1 {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
+		@media (max-width: 1420px) and (min-height: 768px) {
+			display: flex;
+			flex-direction: column;
+			align-items: start;
+		}
 	}
 
 	&__tag-input {
@@ -159,19 +174,24 @@ h1 {
 		box-shadow: 0px 0px 50px 0px rgba(22, 30, 45, 1) inset;
 		border: none;
 		color: $text;
-		font-size: 1.13rem;
+		font-size: 1em;
 		font-family: 'Poppins', sans-serif;
 		padding: 0 1.25rem 0 1.25rem;
+
+		@media (max-width: 1420px) and (min-height: 768px) {
+			width: 100%;
+			margin-bottom: 1rem;
+		}
 
 		&:-webkit-autofill {
 			transition: background-color 5000s ease-in-out 0s;
 			-webkit-text-fill-color: $text;
 			caret-color: $text;
-			-webkit-text-font-size: 1.13rem;
+			-webkit-text-font-size: 1em;
 		}
 		&:-webkit-autofill::first-line {
 			font-family: 'Poppins', sans-serif;
-			font-size: 1.13rem;
+			font-size: 1em;
 		}
 
 		&:hover {
@@ -186,7 +206,7 @@ h1 {
 
 	&__submit-btn {
 		background: linear-gradient($gradient);
-		font-size: 1.44rem;
+		font-size: 1em;
 		color: $input;
 		font-weight: 700;
 		font-family: 'Poppins', sans-serif;
@@ -208,13 +228,17 @@ h1 {
 		opacity: 0.6;
 		width: 47.25rem;
 		height: auto;
-		left: 32rem;
+		left: 34rem;
 		top: 17.5rem;
 		z-index: 1;
 		mix-blend-mode: multiply;
 
 		@media (min-width: 1800px) and (max-height: 1000px) {
 			left: 36rem;
+		}
+
+		@media (max-width: 1420px) and (min-height: 768px) {
+			left: 25rem;
 		}
 	}
 
@@ -223,18 +247,22 @@ h1 {
 		opacity: 0.8;
 		width: 47.25rem;
 		height: auto;
-		left: 32rem;
+		left: 34rem;
 		top: 17.5rem;
 		z-index: 0;
 
 		@media (min-width: 1800px) and (max-height: 1000px) {
 			left: 36rem;
 		}
+
+		@media (max-width: 1420px) and (min-height: 768px) {
+			left: 25rem;
+		}
 	}
 }
 
 .your-notes-title {
-	font-size: 2rem;
+	font-size: 1.6em;
 	font-weight: 700;
 	margin-top: 8rem;
 	color: $white-text;
@@ -278,19 +306,25 @@ main {
 
 		&__show-all-btn {
 			cursor: pointer;
-			padding: 0rem 2.2rem;
+			padding: 0.65rem 2.2rem;
 			background: none;
 			border: solid 0.2rem $text;
 			border-radius: 7px;
-			font-size: 1.13rem;
+			font-size: 1em;
 			font-weight: 600;
 			color: $text;
+			height: fit-content;
 		}
 
 		&__searchbar-form {
 			display: flex;
 			flex-direction: row;
 			justify-content: flex-end;
+
+			@media (max-width: 1420px) and (min-height: 768px) {
+				flex-direction: column;
+				align-items: flex-end;
+			}
 
 			&__search-input {
 				height: 3.06rem;
@@ -300,20 +334,26 @@ main {
 				box-shadow: 0px 0px 50px 0px rgba(22, 30, 45, 1) inset;
 				border: none;
 				color: $text;
-				font-size: 1rem;
+				font-size: 1em;
 				font-family: 'Poppins', sans-serif;
 				padding: 0 1.25rem 0 1.25rem;
-				margin-right: 3rem;
+				margin-right: 2.8vw;
+
+				@media (max-width: 1420px) and (min-height: 768px) {
+					margin-right: 0;
+					margin-bottom: 1rem;
+					width: 18vw;
+				}
 
 				&:-webkit-autofill {
 					transition: background-color 5000s ease-in-out 0s;
 					-webkit-text-fill-color: $text;
 					caret-color: $text;
-					-webkit-text-font-size: 1.13rem;
+					-webkit-text-font-size: 1em;
 				}
 				&:-webkit-autofill::first-line {
 					font-family: 'Poppins', sans-serif;
-					font-size: 1.13rem;
+					font-size: 1em;
 				}
 
 				&:hover {
@@ -339,7 +379,7 @@ main {
 
 				p {
 					position: absolute;
-					font-size: 1.13rem;
+					font-size: 1em;
 					font-weight: 600;
 					color: $white-text;
 
@@ -377,7 +417,7 @@ main {
 			white-space: pre-wrap;
 
 			&__p-title {
-				font-size: 1.31rem;
+				font-size: 1.1em;
 				font-weight: 700;
 				color: $title;
 				display: inline-block;
@@ -390,7 +430,7 @@ main {
 				cursor: pointer;
 				float: right;
 				color: $text;
-				font-size: 1.13rem;
+				font-size: 1em;
 				border: none;
 				border-radius: 7px;
 				background: none;
@@ -405,13 +445,13 @@ main {
 			&__p-tag {
 				text-align: end;
 				color: $tag;
-				font-size: 1rem;
+				font-size: 0.89em;
 				opacity: 0.75;
 				overflow-wrap: break-word;
 			}
 
 			&__error-message {
-				font-size: 1.4rem;
+				font-size: 1.2em;
 				font-weight: 600;
 				color: $title;
 				margin-top: 2.5rem;
@@ -422,7 +462,7 @@ main {
 			cursor: pointer;
 			padding: 1.2rem 2.2rem;
 			color: $text;
-			font-size: 1.13rem;
+			font-size: 1em;
 			border: none;
 			border-radius: 7px;
 			background: none;
@@ -437,7 +477,7 @@ main {
 .footer {
 	background-color: $field;
 	box-shadow: 0px 0px 50px 5px $box-shadow;
-	font-size: 0.88rem;
+	font-size: 0.88em;
 	color: rgba(254, 229, 190, 0.5);
 	padding: 1rem 0;
 	display: flex;
