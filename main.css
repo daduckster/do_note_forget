@@ -16,7 +16,7 @@ body {
   color: #fff8ed;
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .navbar {
@@ -37,17 +37,24 @@ body {
   height: auto;
 }
 
+.navbar__right {
+  text-align: right;
+}
+
 .navbar a {
   text-decoration: none;
   color: #fee5be;
   padding-left: 1.5rem;
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 0.89em;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
 }
 
 h1 {
   text-align: center;
-  font-size: 4.63rem;
+  font-size: 4.2em;
   padding-top: 5.50rem;
   font-weight: 700;
   background: -webkit-linear-gradient(315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e);
@@ -62,9 +69,12 @@ h1 {
   -webkit-box-shadow: 0px 0px 50px 5px #192131;
           box-shadow: 0px 0px 50px 5px #192131;
   border-radius: 7px;
-  font-size: 1.5rem;
   font-weight: 600;
   position: relative;
+}
+
+.note-form__label {
+  font-size: 1.3em;
 }
 
 .note-form__title-input {
@@ -79,7 +89,7 @@ h1 {
   -webkit-box-shadow: 0px 0px 50px 0px #161e2d inset;
           box-shadow: 0px 0px 50px 0px #161e2d inset;
   color: #fee5be;
-  font-size: 1.13rem;
+  font-size: 1em;
   font-family: 'Poppins', sans-serif;
   padding: 0 1.25rem 0 1.25rem;
 }
@@ -89,12 +99,12 @@ h1 {
   transition: background-color 5000s ease-in-out 0s;
   -webkit-text-fill-color: #fee5be;
   caret-color: #fee5be;
-  -webkit-text-font-size: 1.13rem;
+  -webkit-text-font-size: 1em;
 }
 
 .note-form__title-input:-webkit-autofill::first-line {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.13rem;
+  font-size: 1em;
 }
 
 .note-form__title-input:hover {
@@ -118,7 +128,7 @@ h1 {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  font-size: 1.13rem;
+  font-size: 1em;
   font-family: 'Poppins', sans-serif;
   padding: 1rem 1.25rem;
   background-color: #1a2334;
@@ -136,12 +146,12 @@ h1 {
   transition: background-color 5000s ease-in-out 0s;
   -webkit-text-fill-color: #fee5be;
   caret-color: #fee5be;
-  -webkit-text-font-size: 1.13rem;
+  -webkit-text-font-size: 1em;
 }
 
 .note-form__text-input:-webkit-autofill::first-line {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.13rem;
+  font-size: 1em;
 }
 
 .note-form__text-input:hover {
@@ -167,6 +177,21 @@ h1 {
           align-items: center;
 }
 
+@media (max-width: 1420px) and (min-height: 768px) {
+  .note-form__last-line {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+}
+
 .note-form__tag-input {
   margin-top: 0.81rem;
   height: 3.13rem;
@@ -177,9 +202,16 @@ h1 {
           box-shadow: 0px 0px 50px 0px #161e2d inset;
   border: none;
   color: #fee5be;
-  font-size: 1.13rem;
+  font-size: 1em;
   font-family: 'Poppins', sans-serif;
   padding: 0 1.25rem 0 1.25rem;
+}
+
+@media (max-width: 1420px) and (min-height: 768px) {
+  .note-form__tag-input {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 }
 
 .note-form__tag-input:-webkit-autofill {
@@ -187,12 +219,12 @@ h1 {
   transition: background-color 5000s ease-in-out 0s;
   -webkit-text-fill-color: #fee5be;
   caret-color: #fee5be;
-  -webkit-text-font-size: 1.13rem;
+  -webkit-text-font-size: 1em;
 }
 
 .note-form__tag-input:-webkit-autofill::first-line {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.13rem;
+  font-size: 1em;
 }
 
 .note-form__tag-input:hover {
@@ -208,7 +240,7 @@ h1 {
 
 .note-form__submit-btn {
   background: linear-gradient(95deg, #ff7144, #ffc83e);
-  font-size: 1.44rem;
+  font-size: 1em;
   color: #1a2334;
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
@@ -231,7 +263,7 @@ h1 {
   opacity: 0.6;
   width: 47.25rem;
   height: auto;
-  left: 32rem;
+  left: 34rem;
   top: 17.5rem;
   z-index: 1;
   mix-blend-mode: multiply;
@@ -243,12 +275,18 @@ h1 {
   }
 }
 
+@media (max-width: 1420px) and (min-height: 768px) {
+  .note-form__can-img1 {
+    left: 25rem;
+  }
+}
+
 .note-form__can-img2 {
   position: absolute;
   opacity: 0.8;
   width: 47.25rem;
   height: auto;
-  left: 32rem;
+  left: 34rem;
   top: 17.5rem;
   z-index: 0;
 }
@@ -259,8 +297,14 @@ h1 {
   }
 }
 
+@media (max-width: 1420px) and (min-height: 768px) {
+  .note-form__can-img2 {
+    left: 25rem;
+  }
+}
+
 .your-notes-title {
-  font-size: 2rem;
+  font-size: 1.6em;
   font-weight: 700;
   margin-top: 8rem;
   color: #fff8ed;
@@ -330,13 +374,16 @@ main .searchbar-form-container {
 
 main .searchbar-form-container__show-all-btn {
   cursor: pointer;
-  padding: 0rem 2.2rem;
+  padding: 0.65rem 2.2rem;
   background: none;
   border: solid 0.2rem #fee5be;
   border-radius: 7px;
-  font-size: 1.13rem;
+  font-size: 1em;
   font-weight: 600;
   color: #fee5be;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 main .searchbar-form-container__searchbar-form {
@@ -352,6 +399,18 @@ main .searchbar-form-container__searchbar-form {
           justify-content: flex-end;
 }
 
+@media (max-width: 1420px) and (min-height: 768px) {
+  main .searchbar-form-container__searchbar-form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+}
+
 main .searchbar-form-container__searchbar-form__search-input {
   height: 3.06rem;
   width: 20vw;
@@ -361,10 +420,18 @@ main .searchbar-form-container__searchbar-form__search-input {
           box-shadow: 0px 0px 50px 0px #161e2d inset;
   border: none;
   color: #fee5be;
-  font-size: 1rem;
+  font-size: 1em;
   font-family: 'Poppins', sans-serif;
   padding: 0 1.25rem 0 1.25rem;
-  margin-right: 3rem;
+  margin-right: 2.8vw;
+}
+
+@media (max-width: 1420px) and (min-height: 768px) {
+  main .searchbar-form-container__searchbar-form__search-input {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    width: 18vw;
+  }
 }
 
 main .searchbar-form-container__searchbar-form__search-input:-webkit-autofill {
@@ -372,12 +439,12 @@ main .searchbar-form-container__searchbar-form__search-input:-webkit-autofill {
   transition: background-color 5000s ease-in-out 0s;
   -webkit-text-fill-color: #fee5be;
   caret-color: #fee5be;
-  -webkit-text-font-size: 1.13rem;
+  -webkit-text-font-size: 1em;
 }
 
 main .searchbar-form-container__searchbar-form__search-input:-webkit-autofill::first-line {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.13rem;
+  font-size: 1em;
 }
 
 main .searchbar-form-container__searchbar-form__search-input:hover {
@@ -417,7 +484,7 @@ main .searchbar-form-container__searchbar-form__btn-text:hover {
 
 main .searchbar-form-container__searchbar-form__btn-text p {
   position: absolute;
-  font-size: 1.13rem;
+  font-size: 1em;
   font-weight: 600;
   color: #fff8ed;
 }
@@ -456,7 +523,7 @@ main .notes-container__div {
 }
 
 main .notes-container__div__p-title {
-  font-size: 1.31rem;
+  font-size: 1.1em;
   font-weight: 700;
   color: #ff7144;
   display: inline-block;
@@ -469,7 +536,7 @@ main .notes-container__div__delete-btn {
   cursor: pointer;
   float: right;
   color: #fee5be;
-  font-size: 1.13rem;
+  font-size: 1em;
   border: none;
   border-radius: 7px;
   background: none;
@@ -484,13 +551,13 @@ main .notes-container__div__p-text {
 main .notes-container__div__p-tag {
   text-align: end;
   color: #ffc73e;
-  font-size: 1rem;
+  font-size: 0.89em;
   opacity: 0.75;
   overflow-wrap: break-word;
 }
 
 main .notes-container__div__error-message {
-  font-size: 1.4rem;
+  font-size: 1.2em;
   font-weight: 600;
   color: #ff7144;
   margin-top: 2.5rem;
@@ -500,7 +567,7 @@ main .notes-container__back-to-top-btn {
   cursor: pointer;
   padding: 1.2rem 2.2rem;
   color: #fee5be;
-  font-size: 1.13rem;
+  font-size: 1em;
   border: none;
   border-radius: 7px;
   background: none;
@@ -514,7 +581,7 @@ main .notes-container__back-to-top-btn {
   background-color: rgba(32, 44, 66, 0.61);
   -webkit-box-shadow: 0px 0px 50px 5px #192131;
           box-shadow: 0px 0px 50px 5px #192131;
-  font-size: 0.88rem;
+  font-size: 0.88em;
   color: rgba(254, 229, 190, 0.5);
   padding: 1rem 0;
   display: -webkit-box;
