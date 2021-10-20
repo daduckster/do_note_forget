@@ -16,6 +16,8 @@ let notesInStorage = JSON.parse(localStorage.getItem('notes')) || [];
 
 const yourNotesTitle = document.querySelector('.your-notes-title');
 
+const showAllBtn = document.querySelector('.searchbar-form-container__show-all-btn');
+
 noteForm.addEventListener('submit', e => {
 	createNote(e);
 	yourNotesTitle.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
@@ -33,7 +35,7 @@ function createNote(e) {
 	const title = titleTextInputField.value || '';
 	const text = noteTextInputField.value;
 	const tag = tagInputField.value || '';
-	const id = `${createID()}${text}`;
+	const id = `${createID()}`;
 	const note = { title, text, tag, id };
 
 	updateLocalStorage(note);
@@ -64,6 +66,8 @@ function createNoteDOM(title, text, tag, id) {
 	pTag.textContent = tag;
 
 	div.classList.add('notes-container__div');
+
+	div.classList.add(`id${id}`);
 	deleteBtn.classList.add('notes-container__div__delete-btn');
 	pTitle.classList.add('notes-container__div__p-title');
 	pText.classList.add('notes-container__div__p-text');
@@ -94,57 +98,57 @@ function tagSearch(e) {
 
 	if (searchbar.value === '') {
 		populateList();
+		showAllBtn.classList.add('hidden');
 		return;
 	}
 
 	const searchInput = searchbar.value;
-	const fittingNotes = notesInStorage.filter(note => note.tag.includes(searchInput));
+	const fittingNotes = notesInStorage.filter(
+		note => note.tag.includes(searchInput) || note.text.includes(searchInput) || note.title.includes(searchInput)
+	);
 
 	if (fittingNotes.length === 0) {
 		const errorMessage = document.createElement('p');
-		errorMessage.textContent = 'No notes found.  Try another Tag!';
+		errorMessage.textContent = 'No notes found. Try another Tag!';
 		errorMessage.classList.add('notes-container__div__error-message');
 		notesContainer.appendChild(errorMessage);
-		const showAllBtn = document.createElement('button');
-		showAllBtn.textContent = 'Show All';
-		showAllBtn.classList.add('notes-container__div__show-all-btn');
+		showAllBtn.classList.remove('hidden');
 		showAllBtn.addEventListener('click', () => {
 			searchbar.value = '';
 			populateList();
+			showAllBtn.classList.add('hidden');
 		});
-		notesContainer.insertBefore(showAllBtn, notesContainer.firstChild);
 	} else {
 		fittingNotes.map(({ title, text, tag, id }) => createNoteDOM(title, text, tag, id));
-		const showAllBtn = document.createElement('button');
-		showAllBtn.textContent = 'Show All';
-		showAllBtn.classList.add('notes-container__div__show-all-btn');
+		showAllBtn.classList.remove('hidden');
 		showAllBtn.addEventListener('click', () => {
 			searchbar.value = '';
 			populateList();
+			showAllBtn.classList.add('hidden');
 		});
-		notesContainer.insertBefore(showAllBtn, notesContainer.firstChild);
 	}
 }
 
 function createID() {
-	const randomID = Math.floor(Math.random() * 1000000000000000000);
+	const randomID = Math.floor(Math.random() * 1000000000000000000000);
 	return randomID;
 }
 
 function deleteNote(id) {
-	const filteredNotes = notesInStorage.filter(note => note.id !== id);
-	localStorage.setItem('notes', JSON.stringify(filteredNotes));
-	notesInStorage = JSON.parse(localStorage.getItem('notes'));
-
-	populateList();
+	const div = document.querySelector(`.id${id}`);
+	console.log(div);
+	div.classList.add('deleted');
+	setTimeout(() => {
+		const filteredNotes = notesInStorage.filter(note => note.id !== id);
+		localStorage.setItem('notes', JSON.stringify(filteredNotes));
+		notesInStorage = JSON.parse(localStorage.getItem('notes'));
+		populateList();
+	}, 600);
 }
 
 function createToTopBtn() {
-	if (notesInStorage.length === 0) {
-		return;
-	}
 	const backToTopBtn = document.createElement('button');
-	if (notesContainer.lastChild.classList.contains('notes-container__back-to-top-btn')) {
+	if (notesContainer.lastChild && notesContainer.lastChild.classList.contains('notes-container__back-to-top-btn')) {
 		return;
 	} else {
 		backToTopBtn.textContent = 'To the top ▲';
@@ -156,18 +160,16 @@ function createToTopBtn() {
 
 function returnToTop() {
 	window.scrollTo(0, 0);
-	setTimeout(() => {
-		notesContainer.removeChild(notesContainer.lastChild);
-	}, 1);
 }
 
 // hide backToTopBtn when manually scolling to top of page
 window.addEventListener('scroll', () => {
-	if (window.scrollY <= 200) {
-		if (notesContainer.lastChild.classList.contains('notes-container__back-to-top-btn')) {
-			notesContainer.removeChild(notesContainer.lastChild);
+	if (notesInStorage.length !== 0) {
+		if (window.scrollY <= 200) {
+			if (notesContainer.lastChild.classList.contains('notes-container__back-to-top-btn')) {
+				notesContainer.removeChild(notesContainer.lastChild);
+			}
 		}
 	}
 });
-
 populateList();
