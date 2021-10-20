@@ -102,9 +102,12 @@ function tagSearch(e) {
 		return;
 	}
 
-	const searchInput = searchbar.value;
+	const searchInput = searchbar.value.toLowerCase();
 	const fittingNotes = notesInStorage.filter(
-		note => note.tag.includes(searchInput) || note.text.includes(searchInput) || note.title.includes(searchInput)
+		note =>
+			note.tag.toLowerCase().includes(searchInput) ||
+			note.text.toLowerCase().includes(searchInput) ||
+			note.title.toLowerCase().includes(searchInput)
 	);
 
 	if (fittingNotes.length === 0) {
