@@ -1,0 +1,208 @@
+$input: #1a2334;
+$box-shadow: #192131;
+$field: rgba(32, 44, 66, 0.61);
+$text: #ffecd1;
+$white-text: #fff8ed;
+$title: #ff7144;
+$tag: #ffc73e;
+$gradient: 95deg, #ff7144, #ffc83e;
+$text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
+
+@media (min-width: 1800px) {
+	h1 {
+		margin-top: 4.7rem;
+	}
+
+	.note-form {
+		&__can-img1 {
+			left: 38rem;
+		}
+
+		&__can-img2 {
+			left: 38rem;
+		}
+	}
+
+	.your-notes-title {
+		margin-top: 8.5rem;
+	}
+}
+
+@media (max-width: 1420px) {
+	.navbar {
+		padding: 1.25rem 3vw 0 3vw;
+	}
+
+	h1 {
+		margin-top: 3.5rem;
+	}
+
+	.note-form {
+		&__text-input {
+			min-height: 10rem;
+		}
+
+		&__last-line {
+			display: flex;
+			flex-direction: column;
+			align-items: start;
+		}
+
+		&__tag-input {
+			width: 100%;
+			margin-bottom: 0.5rem;
+		}
+
+		&__can-img1 {
+			left: 21rem;
+		}
+
+		&__can-img2 {
+			left: 21rem;
+		}
+	}
+
+	.your-notes-title {
+		margin-top: 5.3rem;
+	}
+
+	main {
+		margin: 0.88rem 10vw 5rem 10vw;
+		padding: 2.50rem 3rem 2.5rem 3rem;
+	}
+
+	.searchbar-form-container {
+		align-items: flex-end;
+
+		&__searchbar-form {
+			&__search-input {
+				width: 20vw;
+			}
+		}
+	}
+
+	.notes-container {
+		&__back-to-top-btn {
+			padding: 1.2rem 0.8rem;
+		}
+	}
+}
+
+@media (max-width: 1080px) {
+	body {
+		font-size: 1rem;
+	}
+
+	.note-form {
+		margin: 0.94rem 16.5vw 0 16.3vw;
+
+		&__can-img1 {
+			width: 35rem;
+			height: auto;
+			top: 28rem;
+			left: 22rem;
+		}
+
+		&__can-img2 {
+			width: 35rem;
+			height: auto;
+			top: 28rem;
+			left: 22rem;
+		}
+	}
+
+	.your-notes-title {
+		margin-left: 5vw;
+		margin-top: 8rem;
+	}
+
+	main {
+		margin: 0.88rem 5vw 5rem 5vw;
+		padding: 2.50rem 3rem 2.5rem 3rem;
+	}
+}
+
+@media (max-width: 800px) {
+	.navbar {
+		&__img {
+			width: 15rem;
+			height: auto;
+		}
+	}
+
+	.note-form {
+		&__can-img1 {
+			width: 27rem;
+			height: auto;
+			top: 28rem;
+			left: 16rem;
+		}
+
+		&__can-img2 {
+			width: 27rem;
+			height: auto;
+			top: 28rem;
+			left: 16rem;
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	body {
+		background: none;
+		background-color: #182131;
+	}
+
+	.navbar {
+		display: none;
+	}
+
+	h1 {
+		font-size: 15.5vw;
+		margin-top: 15vh;
+	}
+
+	.mobile-hero {
+		height: 100vh;
+		width: auto;
+
+		&__hamburger-menu {
+			display: flex;
+			justify-content: flex-end;
+			padding: 2.5vh 4.5vw;
+		}
+
+		&__mobile-buttons {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			&__create-note {
+				background: linear-gradient($gradient);
+				font-size: 6vw;
+				text-align: center;
+				width: 73vw;
+				color: $input;
+				font-weight: 700;
+				font-family: 'Poppins', sans-serif;
+				height: 3.13rem;
+				margin-top: 1.5rem;
+				border-radius: 5px;
+				border: none;
+				z-index: 4;
+				cursor: pointer;
+
+				&:focus {
+					transform: scale(1.05);
+				}
+			}
+
+			&__your-notes {
+				color: $text;
+				font-weight: 600;
+				margin-top: 0.8rem;
+				font-size: 0.89em;
+			}
+		}
+	}
+}

@@ -12,6 +12,7 @@
         rel="stylesheet">
 
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="media.css">
   <script src="script.js" defer></script>
 </head>
 
@@ -29,7 +30,19 @@
   </nav>
   <header>
 
-    <h1>LET'S NOTE!</h1>
+    <div class="mobile-hero">
+      <nav class="mobile-hero__hamburger-menu">
+        <input type="image" src="/Menu-icon.svg" class="hamburger-menu__submit-btn">
+      </nav>
+
+      <h1>LET'S NOTE!</h1>
+
+      <div class="mobile-hero__mobile-buttons">
+        <input type="submit" class="mobile-hero__mobile-buttons__create-note" value="CREATE NEW NOTE">
+        <a href="#" class="mobile-hero__mobile-buttons__your-notes">YOUR NOTES</a>
+      </div>
+    </div>
+
 
     <form class="note-form">
       <label class="note-form__label" for="note-title">Title (optional):</label>
@@ -51,15 +64,16 @@
   </header>
 
   <h2 class="your-notes-title">YOUR NOTES</h2>
+
   <main>
     <div class="searchbar-form-container">
       <input type="submit" class="searchbar-form-container__show-all-btn hidden" value="Show All">
+
       <form class="searchbar-form-container__searchbar-form">
-        <input type="text" name="searchbar" class="searchbar-form-container__searchbar-form__search-input">
-        <div class="searchbar-form-container__searchbar-form__btn-text">
-          <p>Search by Keyword</p>
-          <input type="submit" class="searchbar-form-container__searchbar-form__submit-btn" value="Search by Tag">
-        </div>
+        <label class="searchbar-form-container__searchbar-form__label" for="searchbar-form-label">Search by
+          Keyword:</label>
+        <input type="text" name="searchbar" class="searchbar-form-container__searchbar-form__search-input"
+               id="searchbar-form-label" placeholder="start typing">
       </form>
     </div>
 
