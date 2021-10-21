@@ -1,7 +1,7 @@
 $input: #1a2334;
 $box-shadow: #192131;
 $field: rgba(32, 44, 66, 0.61);
-$text: #ffecd1;
+$text: #ffca7e;
 $white-text: #fff8ed;
 $title: #ff7144;
 $tag: #ffc73e;
@@ -159,17 +159,24 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 
 	h1 {
 		font-size: 15.5vw;
-		margin-top: 15vh;
+		margin-top: 22vh;
 	}
 
 	.mobile-hero {
 		height: 100vh;
 		width: auto;
+		position: relative;
+		border: 1px solid transparent;
 
 		&__hamburger-menu {
 			display: flex;
 			justify-content: flex-end;
 			padding: 2.5vh 4.5vw;
+			position: fixed;
+			top: 0;
+			right: 0;
+			width: 100%;
+			z-index: 10;
 		}
 
 		&__mobile-buttons {
@@ -181,6 +188,7 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 				background: linear-gradient($gradient);
 				font-size: 6vw;
 				text-align: center;
+				height: 10vh;
 				width: 73vw;
 				color: $input;
 				font-weight: 700;
@@ -191,6 +199,7 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 				border: none;
 				z-index: 4;
 				cursor: pointer;
+				padding: 0;
 
 				&:focus {
 					transform: scale(1.05);
@@ -201,7 +210,92 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 				color: $text;
 				font-weight: 600;
 				margin-top: 0.8rem;
+				margin-bottom: 1.8rem;
 				font-size: 0.89em;
+			}
+		}
+
+		&__can-img1 {
+			display: flex;
+			position: absolute;
+			opacity: 0.7;
+			width: auto;
+			height: 43vh;
+			left: -2vw;
+			z-index: 1;
+			mix-blend-mode: multiply;
+		}
+
+		&__can-img2 {
+			display: flex;
+			position: absolute;
+			opacity: 1;
+			width: auto;
+			height: 43vh;
+			left: -2vw;
+			z-index: 0;
+		}
+	}
+
+	.note-form {
+		margin: 0;
+		height: 100vh;
+		width: 100%;
+		border-radius: 0px;
+		padding: 2.5vh 4.5vw;
+
+		&__label {
+			color: $text;
+			font-size: 1.13em;
+			position: relative;
+			z-index: 2;
+		}
+
+		&__title-input {
+			position: relative;
+			z-index: 1;
+			height: 2.4rem;
+		}
+
+		&__text-input {
+			position: relative;
+			z-index: 1;
+			min-height: 40vh;
+		}
+
+		&__tag-input {
+			position: relative;
+			z-index: 1;
+			height: 2.4rem;
+		}
+
+		&__submit-btn {
+			font-size: 6vw;
+			width: 100%;
+			padding: 0;
+		}
+
+		&__can-img1 {
+			display: none;
+		}
+
+		&__can-img2 {
+			display: none;
+		}
+	}
+
+	.notes-container {
+		&__back-to-top-btn {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 330px) {
+	.mobile-hero {
+		&__mobile-buttons {
+			&__your-notes {
+				margin-bottom: 0.4rem;
 			}
 		}
 	}
