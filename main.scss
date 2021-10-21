@@ -1,7 +1,7 @@
 $input: #1a2334;
 $box-shadow: #192131;
 $field: rgba(32, 44, 66, 0.61);
-$text: #ffecd1;
+$text: #ffd9a4;
 $white-text: #fff8ed;
 $title: #ff7144;
 $tag: #ffc73e;
@@ -26,10 +26,6 @@ body {
 	font-family: 'Poppins', sans-serif;
 	font-size: 1.13rem;
 	overflow-x: clip;
-}
-
-.hamburger-menu {
-	display: none;
 }
 
 .navbar {
@@ -69,7 +65,19 @@ h1 {
 }
 
 .mobile-hero {
+	&__hamburger-menu {
+		display: none;
+	}
+
 	&__mobile-buttons {
+		display: none;
+	}
+
+	&__can-img2 {
+		display: none;
+	}
+
+	&__can-img1 {
 		display: none;
 	}
 }
