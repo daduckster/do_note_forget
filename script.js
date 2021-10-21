@@ -73,7 +73,7 @@ function createNoteDOM(title, text, tag, id) {
 	pText.classList.add('notes-container__div__p-text');
 	pTag.classList.add('notes-container__div__p-tag');
 
-	deleteBtn.addEventListener('click', () => deleteNote(id));
+	deleteBtn.addEventListener('click', e => deleteNote(id, e));
 
 	div.appendChild(pTitle);
 	div.appendChild(deleteBtn);
@@ -95,7 +95,7 @@ function populateList() {
 function tagSearch(e) {
 	e.preventDefault();
 	notesContainer.innerHTML = '';
-
+	console.log('went to func');
 	if (searchbar.value === '') {
 		populateList();
 		showAllBtn.classList.add('hidden');
@@ -120,6 +120,7 @@ function tagSearch(e) {
 			searchbar.value = '';
 			populateList();
 			showAllBtn.classList.add('hidden');
+			console.log('no fit');
 		});
 	} else {
 		fittingNotes.map(({ title, text, tag, id }) => createNoteDOM(title, text, tag, id));
@@ -128,6 +129,7 @@ function tagSearch(e) {
 			searchbar.value = '';
 			populateList();
 			showAllBtn.classList.add('hidden');
+			console.log('fit');
 		});
 	}
 }
@@ -137,15 +139,18 @@ function createID() {
 	return randomID;
 }
 
-function deleteNote(id) {
+function deleteNote(id, e) {
 	const div = document.querySelector(`.id${id}`);
-	console.log(div);
 	div.classList.add('deleted');
 	setTimeout(() => {
 		const filteredNotes = notesInStorage.filter(note => note.id !== id);
 		localStorage.setItem('notes', JSON.stringify(filteredNotes));
 		notesInStorage = JSON.parse(localStorage.getItem('notes'));
-		populateList();
+		if (searchbar.value !== '') {
+			tagSearch(e);
+		} else {
+			populateList();
+		}
 	}, 600);
 }
 
