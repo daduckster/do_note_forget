@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Do NOTE Forget</title>
+  <title>Do NOTE forget</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -17,25 +17,43 @@
   <script src="script.js" defer></script>
 </head>
 
-<body>
+<body id="home">
+
   <nav class="navbar">
     <div class="navbar__left">
       <img class="navbar__img" src="/Logo.svg" alt="Logo">
     </div>
     <div class="navbar__right">
-      <a href="#">Home</a>
-      <a href="#">Your notes</a>
-      <a href="#">Information</a>
-      <a href="#">About creator</a>
+      <a class="navbar__link navbar__highlighted-link" href="#home">Home</a>
+      <a class="navbar__link" href="#your-notes">Your notes</a>
+      <a class="navbar__link" href="#">Information</a>
+      <a class="navbar__link" href="#">About creator</a>
     </div>
   </nav>
+
+  <div class="information-window">
+    <div class="information-window__darken"></div>
+  </div>
+
   <header>
-
-    <nav class="mobile-menu">
+    <nav class="mobile-menu hidden">
       <div class="mobile-menu__darken">
-        <div class="mobile-menu__darken__menu-background"></div>
-      </div>
+        <div class="mobile-menu__menu-background">
 
+          <div class="mobile-menu__menu-links">
+            <a href="#home">Home</a>
+            <a href="#create-new-note">Create new note</a>
+            <a href="#your-notes">Your notes</a>
+            <a href="#">Information</a>
+            <a href="#">About creator</a>
+          </div>
+
+          <div class="mobile-menu__logo">
+            <img src="/Logo-mobile.svg" alt="doNOTEforget logo">
+          </div>
+
+        </div>
+      </div>
     </nav>
 
     <div class="mobile-hero">
@@ -43,20 +61,20 @@
         <input type="image" src="/Menu-icon.svg" class="hamburger-menu__submit-btn">
       </nav>
 
-
       <h1>LET'S NOTE!</h1>
 
       <div class="mobile-hero__mobile-buttons">
-        <input type="submit" class="mobile-hero__mobile-buttons__create-note" value="CREATE NEW NOTE">
-        <a href="#" class="mobile-hero__mobile-buttons__your-notes">YOUR NOTES</a>
+        <div class="mobile-hero__mobile-buttons__create-note">
+          <a href="#create-new-note">CREATE NEW NOTE</a>
+        </div>
+        <a href="#your-notes" class="mobile-hero__mobile-buttons__your-notes">YOUR NOTES</a>
       </div>
 
       <img src="/Can2-mobile.png" class="mobile-hero__can-img2" alt="Image of a solar system with a can instead of sun">
       <img src="/Can1-mobile.png" class="mobile-hero__can-img1" alt="Image of a solar system with a can instead of sun">
     </div>
 
-
-    <form class="note-form">
+    <form id="create-new-note" class="note-form">
       <div>
         <label class="note-form__label" for="note-title">Title (optional):</label>
         <input type="text" id="note-title" name="note-title" class="note-form__title-input">
@@ -82,7 +100,7 @@
     </form>
   </header>
 
-  <h2 class="your-notes-title">YOUR NOTES</h2>
+  <h2 id="your-notes" class="your-notes-title">YOUR NOTES</h2>
 
   <main>
     <div class="searchbar-form-container">
@@ -100,7 +118,7 @@
   </main>
 
   <footer class="footer">
-    <p class="footer__copyright">© 2021 published by Olga Vlasak (UI/UX Design, Front-end) </p>
+    <p class="footer__copyright">© 2021 by Olga Vlasak (Front-end, UI/UX Design, Illustration) </p>
     <p class="footer__promo">Like what you see? Contact me: vlasak.o@ya.ru</p>
   </footer>
 

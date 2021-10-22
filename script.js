@@ -1,22 +1,35 @@
-// Note Input Form
 const noteForm = document.querySelector('.note-form');
 const titleTextInputField = document.querySelector('.note-form__title-input');
 const noteTextInputField = document.querySelector('.note-form__text-input');
 const tagInputField = document.querySelector('.note-form__tag-input');
-
-// Search Form
 const searchForm = document.querySelector('.searchbar-form-container__searchbar-form');
 const searchbar = document.querySelector('.searchbar-form-container__searchbar-form__search-input');
-
-// Notes Display
 const notesContainer = document.querySelector('.notes-container');
-
-// Local Storage Access
 let notesInStorage = JSON.parse(localStorage.getItem('notes')) || [];
-
 const yourNotesTitle = document.querySelector('.your-notes-title');
-
 const showAllBtn = document.querySelector('.searchbar-form-container__show-all-btn');
+const mobileMenu = document.querySelector('.mobile-menu');
+const hamburgerMenuBtn = document.querySelector('.mobile-hero__hamburger-menu');
+
+const navLinks = document.querySelectorAll('.navbar__link').forEach(link => {
+	link.addEventListener('click', e => {
+		e.preventDefault();
+		document.querySelectorAll('.navbar__link').forEach(link => {
+			link.classList.remove('navbar__highlighted-link');
+		});
+		link.classList.toggle('navbar__highlighted-link');
+	});
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+	anchor.addEventListener('click', function(e) {
+		e.preventDefault();
+
+		document.querySelector(this.getAttribute('href')).scrollIntoView({
+			behavior: 'smooth',
+		});
+	});
+});
 
 noteForm.addEventListener('submit', e => {
 	createNote(e);
@@ -26,6 +39,8 @@ searchbar.addEventListener('keyup', tagSearch);
 searchbar.addEventListener('search', tagSearch);
 searchForm.addEventListener('submit', tagSearch);
 document.addEventListener('scroll', createToTopBtn);
+hamburgerMenuBtn.addEventListener('click', toggleMobileMenu);
+mobileMenu.addEventListener('click', toggleMobileMenu);
 
 function createNote(e) {
 	e.preventDefault();
@@ -171,7 +186,6 @@ function returnToTop() {
 	window.scrollTo(0, 0);
 }
 
-// hide backToTopBtn when manually scolling to top of page
 window.addEventListener('scroll', () => {
 	if (notesInStorage.length !== 0) {
 		if (window.scrollY <= 200) {
@@ -181,4 +195,13 @@ window.addEventListener('scroll', () => {
 		}
 	}
 });
+
+function toggleMobileMenu() {
+	mobileMenu.classList.toggle('hidden');
+}
+
+function toggleHighlight() {
+	navLinks.classList.toggle('navbar__highlighted-link');
+}
+
 populateList();

@@ -10,13 +10,17 @@ html {
 }
 
 body {
-  background: url("Background-01.jpg");
+  background: url("/Background-01.jpg");
   background-size: 100vw;
   background: cover repeat fixed;
   color: #ffecd1;
   font-family: 'Poppins', sans-serif;
   font-size: 1.13rem;
   overflow-x: clip;
+}
+
+.mobile-menu {
+  display: none;
 }
 
 .navbar {
@@ -39,10 +43,9 @@ body {
 
 .navbar__right {
   text-align: right;
-  line-height: 1rem;
 }
 
-.navbar a {
+.navbar__link {
   text-decoration: none;
   color: #ffca7e;
   margin-left: 1.5rem;
@@ -51,6 +54,11 @@ body {
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
+  white-space: nowrap;
+}
+
+.navbar__highlighted-link {
+  border-bottom: 1px solid #ffca7e;
 }
 
 h1 {
@@ -80,11 +88,11 @@ h1 {
 }
 
 .note-form {
-  margin: 0.94rem 28.5vw 0 28.5vw;
+  margin: 0.94rem 31vw 0 31vw;
   padding: 2.50rem 3rem;
   background-color: rgba(32, 44, 66, 0.5);
-  -webkit-box-shadow: 0px 0px 50px 5px #192131;
-          box-shadow: 0px 0px 50px 5px #192131;
+  -webkit-box-shadow: 0px 0px 50px 5px #131925;
+          box-shadow: 0px 0px 50px 5px #131925;
   border-radius: 5px;
   font-weight: 600;
   position: relative;
@@ -102,7 +110,7 @@ h1 {
   width: 100%;
   border: none;
   border-radius: 5px;
-  background-color: #172030;
+  background-color: #141c2b;
   color: #ffca7e;
   font-size: 1em;
   font-family: 'Poppins', sans-serif;
@@ -146,7 +154,7 @@ h1 {
   font-size: 1em;
   font-family: 'Poppins', sans-serif;
   padding: 1rem 1.25rem;
-  background-color: #172030;
+  background-color: #141c2b;
   resize: vertical;
   border: none;
   color: #ffca7e;
@@ -193,9 +201,9 @@ h1 {
 .note-form__tag-input {
   margin-top: 0.81rem;
   height: 3.13rem;
-  width: 20vw;
+  width: 100%;
   border-radius: 5px;
-  background-color: #172030;
+  background-color: #141c2b;
   border: none;
   color: #ffca7e;
   font-size: 1em;
@@ -229,13 +237,14 @@ h1 {
 
 .note-form__submit-btn {
   background: linear-gradient(95deg, #ff7144, #ffc83e);
-  font-size: 1.3em;
-  color: #172030;
+  font-size: 1.2em;
+  margin-top: 0.81rem;
+  margin-left: 3vw;
+  color: #141c2b;
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
   height: 3.13rem;
   padding: 0.4rem 1.6rem 0.38rem 1.6rem;
-  margin-top: 3vh;
   border-radius: 5px;
   border: none;
   z-index: 4;
@@ -249,22 +258,22 @@ h1 {
 
 .note-form__can-img1 {
   position: absolute;
-  opacity: 0.6;
+  opacity: 0.7;
   width: 47.25rem;
   height: auto;
-  left: 34rem;
-  top: 17.5rem;
+  left: 25vw;
+  top: 18.5rem;
   z-index: 1;
   mix-blend-mode: multiply;
 }
 
 .note-form__can-img2 {
   position: absolute;
-  opacity: 0.8;
+  opacity: 0.9;
   width: 47.25rem;
   height: auto;
-  left: 34rem;
-  top: 17.5rem;
+  left: 25vw;
+  top: 18.5rem;
   z-index: 0;
 }
 
@@ -273,16 +282,15 @@ h1 {
   font-weight: 700;
   margin-top: 8rem;
   color: #ffecd1;
-  margin-left: 16.5vw;
-  scroll-margin: 10rem;
+  margin-left: 18vw;
 }
 
 main {
-  margin: 0.88rem 16.5vw 5rem 16.5vw;
-  padding: 2.50rem 8.13rem 8.13rem 8.13rem;
+  margin: 0.88rem 18vw 5rem 18vw;
+  padding: 2.50rem 3rem 3rem 3rem;
   background-color: rgba(32, 44, 66, 0.5);
-  -webkit-box-shadow: 0px 0px 50px 5px #192131;
-          box-shadow: 0px 0px 50px 5px #192131;
+  -webkit-box-shadow: 0px 0px 50px 5px #131925;
+          box-shadow: 0px 0px 50px 5px #131925;
   border-radius: 5px;
   position: relative;
   z-index: 9;
@@ -340,7 +348,7 @@ main {
 .searchbar-form-container__searchbar-form__search-input {
   height: 2.7rem;
   width: 15vw;
-  background-color: #172030;
+  background-color: #141c2b;
   border-radius: 5px;
   border: none;
   color: #ffca7e;
@@ -373,6 +381,8 @@ main {
   border-radius: 5px;
   padding: 1.88rem 2.50rem;
   white-space: pre-wrap;
+  -webkit-box-shadow: 0px 0px 50px 5px #1319256c;
+          box-shadow: 0px 0px 50px 5px #1319256c;
 }
 
 .notes-container__div__p-title {
@@ -432,8 +442,8 @@ main {
 
 .footer {
   background-color: rgba(32, 44, 66, 0.5);
-  -webkit-box-shadow: 0px 0px 50px 5px #192131;
-          box-shadow: 0px 0px 50px 5px #192131;
+  -webkit-box-shadow: 0px 0px 50px 5px #131925;
+          box-shadow: 0px 0px 50px 5px #131925;
   font-size: 0.88em;
   color: rgba(254, 229, 190, 0.5);
   padding: 1rem 0;
@@ -455,11 +465,11 @@ main {
 }
 
 .deleted {
-  -webkit-animation: myAnim 1s ease 0s 1 normal forwards;
-          animation: myAnim 1s ease 0s 1 normal forwards;
+  -webkit-animation: myAnimDelete 1s ease 0s 1 normal forwards;
+          animation: myAnimDelete 1s ease 0s 1 normal forwards;
 }
 
-@-webkit-keyframes myAnim {
+@-webkit-keyframes myAnimDelete {
   0% {
     opacity: 1;
     -webkit-transform: translateX(0);
@@ -472,7 +482,7 @@ main {
   }
 }
 
-@keyframes myAnim {
+@keyframes myAnimDelete {
   0% {
     opacity: 1;
     -webkit-transform: translateX(0);

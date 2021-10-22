@@ -3,10 +3,10 @@
     margin-top: 4.7rem;
   }
   .note-form__can-img1 {
-    left: 38rem;
+    left: 27.5vw;
   }
   .note-form__can-img2 {
-    left: 38rem;
+    left: 27.5vw;
   }
   .your-notes-title {
     margin-top: 8.5rem;
@@ -37,13 +37,10 @@
   }
   .note-form__tag-input {
     width: 100%;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.3rem;
   }
-  .note-form__can-img1 {
-    left: 21rem;
-  }
-  .note-form__can-img2 {
-    left: 21rem;
+  .note-form__submit-btn {
+    margin-left: 0;
   }
   .your-notes-title {
     margin-top: 5.4rem;
@@ -51,7 +48,6 @@
   }
   main {
     margin: 0.88rem 10vw 5rem 10vw;
-    padding: 2.50rem 3rem 2.5rem 3rem;
   }
   .searchbar-form-container {
     -webkit-box-align: end;
@@ -69,6 +65,9 @@
 @media (max-width: 1080px) {
   body {
     font-size: 1rem;
+    background: url("/Background-02.jpg");
+    background: cover repeat fixed;
+    background-size: 100vw;
   }
   .note-form {
     margin: 0.94rem 16.5vw 0 16.3vw;
@@ -77,13 +76,11 @@
     width: 35rem;
     height: auto;
     top: 28rem;
-    left: 22rem;
   }
   .note-form__can-img2 {
     width: 35rem;
     height: auto;
     top: 28rem;
-    left: 22rem;
   }
   .your-notes-title {
     margin-left: 5vw;
@@ -91,7 +88,6 @@
   }
   main {
     margin: 0.88rem 5vw 5rem 5vw;
-    padding: 2.50rem 3rem 2.5rem 3rem;
   }
 }
 
@@ -101,16 +97,10 @@
     height: auto;
   }
   .note-form__can-img1 {
-    width: 27rem;
-    height: auto;
     top: 28rem;
-    left: 16rem;
   }
   .note-form__can-img2 {
-    width: 27rem;
-    height: auto;
     top: 28rem;
-    left: 16rem;
   }
 }
 /*# sourceMappingURL=media.css.map */
