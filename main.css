@@ -13,7 +13,7 @@ body {
   background: url("Background-01.jpg");
   background-size: 100vw;
   background: cover repeat fixed;
-  color: #fff8ed;
+  color: #ffecd1;
   font-family: 'Poppins', sans-serif;
   font-size: 1.13rem;
   overflow-x: clip;
@@ -44,7 +44,7 @@ body {
 
 .navbar a {
   text-decoration: none;
-  color: #ffd9a4;
+  color: #ffca7e;
   margin-left: 1.5rem;
   font-weight: 300;
   font-size: 0.89em;
@@ -82,7 +82,7 @@ h1 {
 .note-form {
   margin: 0.94rem 28.5vw 0 28.5vw;
   padding: 2.50rem 3rem;
-  background-color: rgba(32, 44, 66, 0.61);
+  background-color: rgba(32, 44, 66, 0.5);
   -webkit-box-shadow: 0px 0px 50px 5px #192131;
           box-shadow: 0px 0px 50px 5px #192131;
   border-radius: 5px;
@@ -102,10 +102,8 @@ h1 {
   width: 100%;
   border: none;
   border-radius: 5px;
-  background-color: #1a2334;
-  -webkit-box-shadow: 0px 0px 50px 0px #161e2d inset;
-          box-shadow: 0px 0px 50px 0px #161e2d inset;
-  color: #ffd9a4;
+  background-color: #172030;
+  color: #ffca7e;
   font-size: 1em;
   font-family: 'Poppins', sans-serif;
   padding: 0 1.25rem 0 1.25rem;
@@ -114,8 +112,8 @@ h1 {
 .note-form__title-input:-webkit-autofill {
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
-  -webkit-text-fill-color: #ffd9a4;
-  caret-color: #ffd9a4;
+  -webkit-text-fill-color: #ffca7e;
+  caret-color: #ffca7e;
   -webkit-text-font-size: 1em;
 }
 
@@ -148,12 +146,10 @@ h1 {
   font-size: 1em;
   font-family: 'Poppins', sans-serif;
   padding: 1rem 1.25rem;
-  background-color: #1a2334;
-  -webkit-box-shadow: 0px 0px 50px 0px #161e2d inset;
-          box-shadow: 0px 0px 50px 0px #161e2d inset;
+  background-color: #172030;
   resize: vertical;
   border: none;
-  color: #ffd9a4;
+  color: #ffca7e;
   z-index: 10;
   position: relative;
 }
@@ -161,8 +157,8 @@ h1 {
 .note-form__text-input:-webkit-autofill {
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
-  -webkit-text-fill-color: #ffd9a4;
-  caret-color: #ffd9a4;
+  -webkit-text-fill-color: #ffca7e;
+  caret-color: #ffca7e;
   -webkit-text-font-size: 1em;
 }
 
@@ -199,11 +195,9 @@ h1 {
   height: 3.13rem;
   width: 20vw;
   border-radius: 5px;
-  background-color: #1a2334;
-  -webkit-box-shadow: 0px 0px 50px 0px #161e2d inset;
-          box-shadow: 0px 0px 50px 0px #161e2d inset;
+  background-color: #172030;
   border: none;
-  color: #ffd9a4;
+  color: #ffca7e;
   font-size: 1em;
   font-family: 'Poppins', sans-serif;
   padding: 0 1.25rem 0 1.25rem;
@@ -212,8 +206,8 @@ h1 {
 .note-form__tag-input:-webkit-autofill {
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
-  -webkit-text-fill-color: #ffd9a4;
-  caret-color: #ffd9a4;
+  -webkit-text-fill-color: #ffca7e;
+  caret-color: #ffca7e;
   -webkit-text-font-size: 1em;
 }
 
@@ -236,12 +230,12 @@ h1 {
 .note-form__submit-btn {
   background: linear-gradient(95deg, #ff7144, #ffc83e);
   font-size: 1.3em;
-  color: #1a2334;
+  color: #172030;
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
   height: 3.13rem;
   padding: 0.4rem 1.6rem 0.38rem 1.6rem;
-  margin-top: 0.81rem;
+  margin-top: 3vh;
   border-radius: 5px;
   border: none;
   z-index: 4;
@@ -278,7 +272,7 @@ h1 {
   font-size: 1.6em;
   font-weight: 700;
   margin-top: 8rem;
-  color: #fff8ed;
+  color: #ffecd1;
   margin-left: 16.5vw;
   scroll-margin: 10rem;
 }
@@ -286,7 +280,7 @@ h1 {
 main {
   margin: 0.88rem 16.5vw 5rem 16.5vw;
   padding: 2.50rem 8.13rem 8.13rem 8.13rem;
-  background-color: rgba(32, 44, 66, 0.61);
+  background-color: rgba(32, 44, 66, 0.5);
   -webkit-box-shadow: 0px 0px 50px 5px #192131;
           box-shadow: 0px 0px 50px 5px #192131;
   border-radius: 5px;
@@ -312,10 +306,10 @@ main {
   cursor: pointer;
   padding: 0.4rem 2.2rem;
   background: none;
-  border: solid 0.1rem #ffd9a4;
+  border: solid 0.1rem #ffca7e;
   border-radius: 5px;
   font-size: 1em;
-  color: #ffd9a4;
+  color: #ffca7e;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -339,19 +333,17 @@ main {
 
 .searchbar-form-container__searchbar-form__label {
   font-size: 1em;
-  color: #ffd9a4;
+  color: #ffca7e;
   margin-right: 1.5rem;
 }
 
 .searchbar-form-container__searchbar-form__search-input {
   height: 2.7rem;
   width: 15vw;
-  background-color: #1a2334;
+  background-color: #172030;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 50px 0px #161e2d inset;
-          box-shadow: 0px 0px 50px 0px #161e2d inset;
   border: none;
-  color: #ffd9a4;
+  color: #ffca7e;
   font-size: 1em;
   font-family: 'Poppins', sans-serif;
   padding: 0 1.25rem 0 1.25rem;
@@ -360,8 +352,8 @@ main {
 .searchbar-form-container__searchbar-form__search-input:-webkit-autofill {
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
-  -webkit-text-fill-color: #ffd9a4;
-  caret-color: #ffd9a4;
+  -webkit-text-fill-color: #ffca7e;
+  caret-color: #ffca7e;
   -webkit-text-font-size: 1em;
 }
 
@@ -370,22 +362,13 @@ main {
   font-size: 1em;
 }
 
-.searchbar-form-container__searchbar-form__search-input:hover {
-  -webkit-box-shadow: 0px 0px 50px 5px rgba(40, 55, 83, 0.8);
-          box-shadow: 0px 0px 50px 5px rgba(40, 55, 83, 0.8);
-}
-
 .searchbar-form-container__searchbar-form__search-input:focus {
   outline: none;
-  -webkit-box-shadow: 0px 0px 50px 5px rgba(40, 55, 83, 0.8);
-          box-shadow: 0px 0px 50px 5px rgba(40, 55, 83, 0.8);
 }
 
 .notes-container__div {
-  background-color: #1a2334;
-  -webkit-box-shadow: 0px 0px 50px 0px #161e2d inset;
-          box-shadow: 0px 0px 50px 0px #161e2d inset;
-  color: #ffd9a4;
+  background-color: #202c42;
+  color: #ffca7e;
   margin-top: 2.50rem;
   border-radius: 5px;
   padding: 1.88rem 2.50rem;
@@ -405,7 +388,7 @@ main {
 .notes-container__div__delete-btn {
   cursor: pointer;
   float: right;
-  color: #ffd9a4;
+  color: #ffca7e;
   font-size: 1em;
   border: none;
   border-radius: 5px;
@@ -436,7 +419,7 @@ main {
 .notes-container__back-to-top-btn {
   cursor: pointer;
   padding: 1.2rem 2.2rem;
-  color: #ffd9a4;
+  color: #ffca7e;
   font-size: 1em;
   border: none;
   border-radius: 5px;
@@ -448,7 +431,7 @@ main {
 }
 
 .footer {
-  background-color: rgba(32, 44, 66, 0.61);
+  background-color: rgba(32, 44, 66, 0.5);
   -webkit-box-shadow: 0px 0px 50px 5px #192131;
           box-shadow: 0px 0px 50px 5px #192131;
   font-size: 0.88em;
@@ -464,6 +447,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
 }
 
 .hidden {

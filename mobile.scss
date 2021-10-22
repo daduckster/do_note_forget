@@ -1,0 +1,266 @@
+$input: #172030;
+$box-shadow: #192131;
+$field: rgba(32, 44, 66, 0.5);
+$note-background: #202c42;
+$text: #ffca7e;
+$white-text: #ffecd1;
+$title: #ff7144;
+$tag: #ffc73e;
+$gradient: 95deg, #ff7144, #ffc83e;
+$text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
+
+@media (max-width: 500px) {
+	body {
+		background: none;
+		background-color: #182131;
+	}
+
+	.navbar {
+		display: none;
+	}
+
+	.mobile-menu {
+		&__darken {
+			height: 100vh;
+			width: 100%;
+			background-color: rgba(24, 33, 49, 0.5);
+			position: fixed;
+			z-index: 11;
+
+			&__menu-background {
+				height: 100vh;
+				width: 60vw;
+				background-color: rgba(32, 44, 66, 0.9);
+				float: right;
+			}
+		}
+	}
+
+	h1 {
+		font-size: 15.5vw;
+		margin-top: 22vh;
+	}
+
+	.mobile-hero {
+		height: 100vh;
+		width: auto;
+		position: relative;
+		border: 1px solid transparent;
+
+		&__hamburger-menu {
+			display: flex;
+			justify-content: flex-end;
+			padding: 2.5vh 4.5vw;
+			position: fixed;
+			top: 0;
+			right: 0;
+			width: 100%;
+			z-index: 15;
+		}
+
+		&__mobile-buttons {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			&__create-note {
+				background: linear-gradient($gradient);
+				font-size: 6vw;
+				text-align: center;
+				height: 10vh;
+				width: 73vw;
+				color: $input;
+				font-weight: 700;
+				font-family: 'Poppins', sans-serif;
+				height: 3.13rem;
+				margin-top: 1.5rem;
+				border-radius: 5px;
+				border: none;
+				z-index: 4;
+				cursor: pointer;
+				padding: 0;
+
+				&:focus {
+					transform: scale(1.05);
+				}
+			}
+
+			&__your-notes {
+				color: $text;
+				font-weight: 600;
+				margin-top: 0.8rem;
+				margin-bottom: 1.8rem;
+				font-size: 0.89em;
+			}
+		}
+
+		&__can-img1 {
+			display: flex;
+			position: absolute;
+			opacity: 0.7;
+			width: auto;
+			height: 43vh;
+			left: -2vw;
+			z-index: 1;
+			mix-blend-mode: multiply;
+		}
+
+		&__can-img2 {
+			display: flex;
+			position: absolute;
+			opacity: 1;
+			width: auto;
+			height: 43vh;
+			left: -2vw;
+			z-index: 0;
+		}
+	}
+
+	.mobile-menu {
+	}
+
+	.note-form {
+		margin: 0;
+		height: 100vh;
+		width: 100%;
+		border-radius: 0px;
+		padding: 4vh 4.5vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+
+		&__label {
+			color: $text;
+			font-size: 1.13em;
+			position: relative;
+			z-index: 2;
+		}
+
+		&__title-input {
+			position: relative;
+			z-index: 1;
+			height: 2.4rem;
+			margin-top: 1vh;
+			margin-bottom: 2vh;
+		}
+
+		&__text-input {
+			position: relative;
+			z-index: 1;
+			min-height: 50vh;
+			margin-top: 1vh;
+			margin-bottom: 2vh;
+		}
+
+		&__tag-input {
+			position: relative;
+			z-index: 1;
+			height: 2.4rem;
+			margin-top: 1vh;
+			margin-bottom: 2vh;
+		}
+
+		&__submit-btn {
+			font-size: 6vw;
+			width: 100%;
+			padding: 0;
+			margin-top: 2vh;
+		}
+
+		&__can-img1 {
+			display: none;
+		}
+
+		&__can-img2 {
+			display: none;
+		}
+	}
+
+	.your-notes-title {
+		margin-top: 6vh;
+		color: $text;
+	}
+
+	main {
+		margin: 1vh 0;
+		padding: 2.5vh 4.5vw 5vh 4.5vw;
+		border-radius: 0px;
+	}
+
+	.searchbar-form-container {
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: flex-start;
+
+		&__show-all-btn {
+			padding: 0;
+			background: none;
+			border: none;
+			text-decoration: underline;
+		}
+
+		&__searchbar-form {
+			flex-direction: column;
+			align-items: flex-start;
+			width: 100%;
+
+			&__label {
+				margin-right: 1.5rem;
+			}
+
+			&__search-input {
+				width: 100%;
+				height: 2.4rem;
+				margin: 1vh 0 2vh 0;
+			}
+		}
+	}
+
+	.notes-container {
+		&__div {
+			margin-top: 2vh;
+		}
+		&__back-to-top-btn {
+			display: none;
+		}
+	}
+
+	.footer {
+		margin-top: 7vh;
+	}
+}
+
+@media (max-width: 330px) {
+	.mobile-hero {
+		&__mobile-buttons {
+			&__your-notes {
+				margin-bottom: 0.4rem;
+			}
+		}
+	}
+
+	.note-form {
+		&__text-input {
+			min-height: 45vh;
+		}
+
+		&__label {
+			font-size: 1em;
+		}
+
+		&__title-input {
+			margin-top: 1vh;
+			margin-bottom: 2vh;
+		}
+
+		&__text-input {
+			margin-top: 1vh;
+			margin-bottom: 2vh;
+		}
+
+		&__tag-input {
+			margin-top: 1vh;
+			margin-bottom: 2vh;
+		}
+	}
+}
