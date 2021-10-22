@@ -1,5 +1,6 @@
-$input: #172030;
-$box-shadow: #192131;
+$input: #141c2b;
+$box-shadow: #131925;
+$note-shadow: #1319256c;
 $field: rgba(32, 44, 66, 0.50);
 $note-background: #202c42;
 $text: #ffca7e;
@@ -20,13 +21,17 @@ html {
 }
 
 body {
-	background: url("Background-01.jpg");
+	background: url("/Background-01.jpg");
 	background-size: 100vw;
 	background: cover repeat fixed;
 	color: $white-text;
 	font-family: 'Poppins', sans-serif;
 	font-size: 1.13rem;
 	overflow-x: clip;
+}
+
+.mobile-menu {
+	display: none;
 }
 
 .navbar {
@@ -42,16 +47,20 @@ body {
 
 	&__right {
 		text-align: right;
-		line-height: 1rem;
 	}
 
-	a {
+	&__link {
 		text-decoration: none;
 		color: $text;
 		margin-left: 1.5rem;
 		font-weight: 300;
 		font-size: 0.89em;
 		align-self: end;
+		white-space: nowrap;
+	}
+
+	&__highlighted-link {
+		border-bottom: 1px solid $text;
 	}
 }
 
@@ -84,7 +93,7 @@ h1 {
 }
 
 .note-form {
-	margin: 0.94rem 28.5vw 0 28.5vw;
+	margin: 0.94rem 31vw 0 31vw;
 	padding: 2.50rem 3rem;
 	background-color: $field;
 	box-shadow: 0px 0px 50px 5px $box-shadow;
@@ -179,7 +188,7 @@ h1 {
 	&__tag-input {
 		margin-top: 0.81rem;
 		height: 3.13rem;
-		width: 20vw;
+		width: 100%;
 		border-radius: 5px;
 		background-color: $input;
 		border: none;
@@ -211,13 +220,14 @@ h1 {
 
 	&__submit-btn {
 		background: linear-gradient($gradient);
-		font-size: 1.3em;
+		font-size: 1.2em;
+		margin-top: 0.81rem;
+		margin-left: 3vw;
 		color: $input;
 		font-weight: 700;
 		font-family: 'Poppins', sans-serif;
 		height: 3.13rem;
 		padding: 0.4rem 1.6rem 0.38rem 1.6rem;
-		margin-top: 3vh;
 		border-radius: 5px;
 		border: none;
 		z-index: 4;
@@ -230,22 +240,22 @@ h1 {
 
 	&__can-img1 {
 		position: absolute;
-		opacity: 0.6;
+		opacity: 0.7;
 		width: 47.25rem;
 		height: auto;
-		left: 34rem;
-		top: 17.5rem;
+		left: 25vw;
+		top: 18.5rem;
 		z-index: 1;
 		mix-blend-mode: multiply;
 	}
 
 	&__can-img2 {
 		position: absolute;
-		opacity: 0.8;
+		opacity: 0.9;
 		width: 47.25rem;
 		height: auto;
-		left: 34rem;
-		top: 17.5rem;
+		left: 25vw;
+		top: 18.5rem;
 		z-index: 0;
 	}
 }
@@ -255,13 +265,12 @@ h1 {
 	font-weight: 700;
 	margin-top: 8rem;
 	color: $white-text;
-	margin-left: 16.5vw;
-	scroll-margin: 10rem;
+	margin-left: 18vw;
 }
 
 main {
-	margin: 0.88rem 16.5vw 5rem 16.5vw;
-	padding: 2.50rem 8.13rem 8.13rem 8.13rem;
+	margin: 0.88rem 18vw 5rem 18vw;
+	padding: 2.50rem 3rem 3rem 3rem;
 	background-color: $field;
 	box-shadow: 0px 0px 50px 5px $box-shadow;
 	border-radius: 5px;
@@ -335,6 +344,7 @@ main {
 		border-radius: 5px;
 		padding: 1.88rem 2.50rem;
 		white-space: pre-wrap;
+		box-shadow: 0px 0px 50px 5px $note-shadow;
 
 		&__p-title {
 			font-size: 1.1em;
@@ -410,10 +420,10 @@ main {
 }
 
 .deleted {
-	animation: myAnim 1s ease 0s 1 normal forwards;
+	animation: myAnimDelete 1s ease 0s 1 normal forwards;
 }
 
-@keyframes myAnim {
+@keyframes myAnimDelete {
 	0% {
 		opacity: 1;
 		transform: translateX(0);

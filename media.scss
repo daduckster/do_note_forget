@@ -1,6 +1,7 @@
-$input: #172030;
-$box-shadow: #192131;
-$field: rgba(32, 44, 66, 0.5);
+$input: #141c2b;
+$box-shadow: #131925;
+$note-shadow: #1319256c;
+$field: rgba(32, 44, 66, 0.50);
 $note-background: #202c42;
 $text: #ffca7e;
 $white-text: #ffecd1;
@@ -16,11 +17,11 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 
 	.note-form {
 		&__can-img1 {
-			left: 38rem;
+			left: 27.5vw;
 		}
 
 		&__can-img2 {
-			left: 38rem;
+			left: 27.5vw;
 		}
 	}
 
@@ -51,15 +52,11 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 
 		&__tag-input {
 			width: 100%;
-			margin-bottom: 0.5rem;
+			margin-bottom: 1.3rem;
 		}
 
-		&__can-img1 {
-			left: 21rem;
-		}
-
-		&__can-img2 {
-			left: 21rem;
+		&__submit-btn {
+			margin-left: 0;
 		}
 	}
 
@@ -70,7 +67,6 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 
 	main {
 		margin: 0.88rem 10vw 5rem 10vw;
-		padding: 2.50rem 3rem 2.5rem 3rem;
 	}
 
 	.searchbar-form-container {
@@ -93,6 +89,9 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 @media (max-width: 1080px) {
 	body {
 		font-size: 1rem;
+		background: url("/Background-02.jpg");
+		background: cover repeat fixed;
+		background-size: 100vw;
 	}
 
 	.note-form {
@@ -102,14 +101,12 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 			width: 35rem;
 			height: auto;
 			top: 28rem;
-			left: 22rem;
 		}
 
 		&__can-img2 {
 			width: 35rem;
 			height: auto;
 			top: 28rem;
-			left: 22rem;
 		}
 	}
 
@@ -120,7 +117,6 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 
 	main {
 		margin: 0.88rem 5vw 5rem 5vw;
-		padding: 2.50rem 3rem 2.5rem 3rem;
 	}
 }
 
@@ -134,17 +130,11 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 
 	.note-form {
 		&__can-img1 {
-			width: 27rem;
-			height: auto;
 			top: 28rem;
-			left: 16rem;
 		}
 
 		&__can-img2 {
-			width: 27rem;
-			height: auto;
 			top: 28rem;
-			left: 16rem;
 		}
 	}
 }

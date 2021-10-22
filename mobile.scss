@@ -1,6 +1,7 @@
-$input: #172030;
-$box-shadow: #192131;
-$field: rgba(32, 44, 66, 0.5);
+$input: #141c2b;
+$box-shadow: #131925;
+$note-shadow: #1319256c;
+$field: rgba(32, 44, 66, 0.50);
 $note-background: #202c42;
 $text: #ffca7e;
 $white-text: #ffecd1;
@@ -9,10 +10,11 @@ $tag: #ffc73e;
 $gradient: 95deg, #ff7144, #ffc83e;
 $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 
-@media (max-width: 500px) {
+@media (max-width: 567px) {
 	body {
-		background: none;
-		background-color: #182131;
+		background: url("/Background-03.jpg");
+		background: cover repeat fixed;
+		background-size: 100vw;
 	}
 
 	.navbar {
@@ -20,18 +22,54 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 	}
 
 	.mobile-menu {
+		display: flex;
+
 		&__darken {
 			height: 100vh;
 			width: 100%;
 			background-color: rgba(24, 33, 49, 0.5);
 			position: fixed;
 			z-index: 11;
+		}
+		&__menu-background {
+			height: 100vh;
+			width: 60vw;
+			background-color: rgba(32, 44, 66, 0.97);
+			float: right;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		&__menu-links {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
 
-			&__menu-background {
-				height: 100vh;
-				width: 60vw;
-				background-color: rgba(32, 44, 66, 0.9);
-				float: right;
+			a {
+				text-decoration: none;
+				color: $text;
+				margin-bottom: 0.5rem;
+				font-weight: 300;
+				font-size: 1em;
+
+				&:focus {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		&__logo {
+			margin: 2vh 0;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+
+			img {
+				width: 95%;
+				height: auto;
 			}
 		}
 	}
@@ -65,23 +103,30 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 
 			&__create-note {
 				background: linear-gradient($gradient);
-				font-size: 6vw;
-				text-align: center;
-				height: 10vh;
+
 				width: 73vw;
-				color: $input;
+
 				font-weight: 700;
 				font-family: 'Poppins', sans-serif;
-				height: 3.13rem;
+				height: 3rem;
 				margin-top: 1.5rem;
 				border-radius: 5px;
 				border: none;
 				z-index: 4;
 				cursor: pointer;
-				padding: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 
 				&:focus {
 					transform: scale(1.05);
+				}
+
+				a {
+					color: $input;
+					text-decoration: none;
+					font-size: 6vw;
+					text-align: center;
 				}
 			}
 
@@ -116,9 +161,6 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 		}
 	}
 
-	.mobile-menu {
-	}
-
 	.note-form {
 		margin: 0;
 		height: 100vh;
@@ -128,6 +170,7 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
+		box-shadow: none;
 
 		&__label {
 			color: $text;
@@ -185,6 +228,7 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 		margin: 1vh 0;
 		padding: 2.5vh 4.5vw 5vh 4.5vw;
 		border-radius: 0px;
+		box-shadow: none;
 	}
 
 	.searchbar-form-container {
