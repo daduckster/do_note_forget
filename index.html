@@ -13,6 +13,7 @@
 
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="media.css">
+  <link rel="stylesheet" href="mobile.css">
   <script src="script.js" defer></script>
 </head>
 
@@ -30,10 +31,18 @@
   </nav>
   <header>
 
+    <nav class="mobile-menu">
+      <div class="mobile-menu__darken">
+        <div class="mobile-menu__darken__menu-background"></div>
+      </div>
+
+    </nav>
+
     <div class="mobile-hero">
       <nav class="mobile-hero__hamburger-menu">
         <input type="image" src="/Menu-icon.svg" class="hamburger-menu__submit-btn">
       </nav>
+
 
       <h1>LET'S NOTE!</h1>
 
@@ -48,18 +57,25 @@
 
 
     <form class="note-form">
-      <label class="note-form__label" for="note-title">Title (optional):</label>
-      <input type="text" id="note-title" name="note-title" class="note-form__title-input">
-
-      <label class="note-form__label" for="note-text">Type your note here:</label>
-      <textarea type="text" id="note-text" name="note-text" class="note-form__text-input" required></textarea>
-
-      <label class="note-form__label" for="note-tags">Tag (optional):</label>
-
-      <div class="note-form__last-line">
-        <input type="text" id="note-tags" name="note-tags" class="note-form__tag-input">
-        <input type="submit" class="note-form__submit-btn" value="CREATE NEW NOTE">
+      <div>
+        <label class="note-form__label" for="note-title">Title (optional):</label>
+        <input type="text" id="note-title" name="note-title" class="note-form__title-input">
       </div>
+
+      <div>
+        <label class="note-form__label" for="note-text">Type your note here:</label>
+        <textarea type="text" id="note-text" name="note-text" class="note-form__text-input" required></textarea>
+      </div>
+
+      <div>
+        <label class="note-form__label" for="note-tags">Tag (optional):</label>
+
+        <div class="note-form__last-line">
+          <input type="text" id="note-tags" name="note-tags" class="note-form__tag-input">
+          <input type="submit" class="note-form__submit-btn" value="CREATE NEW NOTE">
+        </div>
+      </div>
+
 
       <img src="/Can2.png" class="note-form__can-img2" alt="Image of a solar system with a can instead of sun">
       <img src="/Can.png" class="note-form__can-img1" alt="Image of a solar system with a can instead of sun">
@@ -75,7 +91,7 @@
       <form class="searchbar-form-container__searchbar-form">
         <label class="searchbar-form-container__searchbar-form__label" for="searchbar-form-label">Search by
           Keyword:</label>
-        <input type="text" name="searchbar" class="searchbar-form-container__searchbar-form__search-input"
+        <input type="search" name="searchbar" class="searchbar-form-container__searchbar-form__search-input"
                id="searchbar-form-label" placeholder="start typing">
       </form>
     </div>

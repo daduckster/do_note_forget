@@ -23,6 +23,7 @@ noteForm.addEventListener('submit', e => {
 	yourNotesTitle.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
 });
 searchbar.addEventListener('keyup', tagSearch);
+searchbar.addEventListener('search', tagSearch);
 searchForm.addEventListener('submit', tagSearch);
 document.addEventListener('scroll', createToTopBtn);
 
