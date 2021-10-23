@@ -33,6 +33,15 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 @media (max-width: 1420px) {
 	.navbar {
 		padding: 1.25rem 3vw 0 3vw;
+
+		&__img {
+			width: 17rem;
+			height: auto;
+		}
+	}
+
+	.information-window {
+		padding: 0.7rem 3vw 0 0;
 	}
 
 	h1 {
@@ -92,6 +101,12 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 		background: url("/Background-02.jpg");
 		background: cover repeat fixed;
 		background-size: 100vw;
+	}
+
+	.information-window {
+		&__background {
+			width: 30rem;
+		}
 	}
 
 	.note-form {

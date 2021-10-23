@@ -19,6 +19,14 @@ body {
   overflow-x: clip;
 }
 
+.window-darken {
+  position: fixed;
+  background-color: rgba(14, 19, 29, 0.4);
+  height: 100%;
+  width: 100vw;
+  z-index: 30;
+}
+
 .mobile-menu {
   display: none;
 }
@@ -34,6 +42,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  z-index: 40;
 }
 
 .navbar__img {
@@ -59,6 +69,44 @@ body {
 
 .navbar__highlighted-link {
   border-bottom: 1px solid #ffca7e;
+}
+
+.information-window {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  z-index: 50;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0.7rem 17vw 0 0;
+}
+
+.information-window__background {
+  background-color: #202c42;
+  width: 35rem;
+  padding: 2.50rem;
+}
+
+.information-window h2 {
+  font-size: 1.3em;
+  color: #ff7144;
+}
+
+.information-window__block {
+  margin-top: 1.5rem;
+}
+
+.information-window__block h3 {
+  font-size: 1em;
+  color: #ffecd1;
+}
+
+.information-window__block p {
+  font-size: 1em;
+  color: #ffca7e;
 }
 
 h1 {
