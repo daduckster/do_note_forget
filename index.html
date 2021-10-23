@@ -18,21 +18,66 @@
 </head>
 
 <body id="home">
+  <div class="window-darken hidden"></div>
 
   <nav class="navbar">
     <div class="navbar__left">
       <img class="navbar__img" src="/Logo.svg" alt="Logo">
     </div>
     <div class="navbar__right">
-      <a class="navbar__link navbar__highlighted-link" href="#home">Home</a>
-      <a class="navbar__link" href="#your-notes">Your notes</a>
-      <a class="navbar__link" href="#">Information</a>
-      <a class="navbar__link" href="#">About creator</a>
+      <a class="navbar__link home navbar__highlighted-link" href="#home">Home</a>
+      <a class="navbar__link your-notes" href="#your-notes">Your notes</a>
+      <a class="navbar__link information" href="#">Information</a>
+      <a class="navbar__link contact" href="#">Contact</a>
     </div>
   </nav>
 
-  <div class="information-window">
-    <div class="information-window__darken"></div>
+  <div class="information-window hidden">
+    <div class="information-window__background">
+      <h2>About doNOTEforget</h2>
+
+      <div class="information-window__block">
+        <h3>LOCAL STORAGE</h3>
+        <p>This app is storing your notes locally, in your browser’s cache on the device that you are using right now.
+          You can access them any time as long as you use the same browser and device.</p>
+      </div>
+
+      <div class="information-window__block">
+        <h3>NO NEED TO LOGIN</h3>
+        <p>Unlike Cookies, Local Storage data is not sent to a server. That means that you don’t need an account: your
+          browser will keep your notes safe and up to date even after you close this website.</p>
+      </div>
+
+      <div class="information-window__block">
+        <h3>NEW BROWSER - NEW STORAGE</h3>
+        <p>Due to storage terms, the notes that you have made using this Browser can not be accessed from another
+          browser or device. But you can start a new Note-List on unlimited amount of Devices.</p>
+      </div>
+
+      <div class="information-window__block">
+        <h3>THERE IS MORE TO COME</h3>
+        <p>This project is going to evolve with me :)</p>
+        <p>But for now, thank you for using “doNOTEforget”, hope you enjoy it, and have a great day!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-window">
+    <div class="contact-window__background">
+      <h2>About the Creator</h2>
+      <div class="contact-window__intro">
+        <img src="/Profile-photo.jpg" alt="my photo">
+        <div class="contact-window__intro__text">
+          <p>Hi!</p>
+          <p>My name is <span>Olya Vlasak</span> and it’s nice to see you here :)</p>
+        </div>
+        <p>I am a Web Developer, UI/UX Designer and Illustrator located in Zurich, Switzerland.</p>
+        <p>Not long ago, I have started my journey in Web-Development and am really passionate about it. With just a
+          laptop, I now have the possibility to create something new and unique.</p>
+
+
+      </div>
+    </div>
   </div>
 
   <header>
@@ -45,7 +90,7 @@
             <a href="#create-new-note">Create new note</a>
             <a href="#your-notes">Your notes</a>
             <a href="#">Information</a>
-            <a href="#">About creator</a>
+            <a href="#">Contact</a>
           </div>
 
           <div class="mobile-menu__logo">
@@ -119,7 +164,7 @@
 
   <footer class="footer">
     <p class="footer__copyright">© 2021 by Olga Vlasak (Front-end, UI/UX Design, Illustration) </p>
-    <p class="footer__promo">Like what you see? Contact me: vlasak.o@ya.ru</p>
+    <p class="footer__promo">VlasakOlga@gmail.com</p>
   </footer>
 
 </body>

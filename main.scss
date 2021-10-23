@@ -28,6 +28,15 @@ body {
 	font-family: 'Poppins', sans-serif;
 	font-size: 1.13rem;
 	overflow-x: clip;
+	// position: relative;
+}
+
+.window-darken {
+	position: fixed;
+	background-color: rgba(14, 19, 29, 0.4);
+	height: 100%;
+	width: 100vw;
+	z-index: 30;
 }
 
 .mobile-menu {
@@ -39,6 +48,8 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	position: relative;
+	z-index: 40;
 
 	&__img {
 		width: 20rem;
@@ -61,6 +72,40 @@ body {
 
 	&__highlighted-link {
 		border-bottom: 1px solid $text;
+	}
+}
+
+.information-window {
+	position: absolute;
+	display: flex;
+	width: 100vw;
+	z-index: 50;
+	justify-content: flex-end;
+	padding: 0.7rem 17vw 0 0;
+
+	&__background {
+		background-color: $note-background;
+		width: 35rem;
+		padding: 2.50rem;
+	}
+
+	h2 {
+		font-size: 1.3em;
+		color: $title;
+	}
+
+	&__block {
+		margin-top: 1.5rem;
+
+		h3 {
+			font-size: 1em;
+			color: $white-text;
+		}
+
+		p {
+			font-size: 1em;
+			color: $text;
+		}
 	}
 }
 

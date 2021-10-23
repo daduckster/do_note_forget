@@ -17,6 +17,13 @@
   .navbar {
     padding: 1.25rem 3vw 0 3vw;
   }
+  .navbar__img {
+    width: 17rem;
+    height: auto;
+  }
+  .information-window {
+    padding: 0.7rem 3vw 0 0;
+  }
   h1 {
     margin-top: 3.5rem;
   }
@@ -68,6 +75,9 @@
     background: url("/Background-02.jpg");
     background: cover repeat fixed;
     background-size: 100vw;
+  }
+  .information-window__background {
+    width: 30rem;
   }
   .note-form {
     margin: 0.94rem 16.5vw 0 16.3vw;

@@ -27,7 +27,7 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 		&__darken {
 			height: 100vh;
 			width: 100%;
-			background-color: rgba(24, 33, 49, 0.5);
+			background-color: rgba(12, 16, 24, 0.4);
 			position: fixed;
 			z-index: 11;
 		}
@@ -93,7 +93,7 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 			top: 0;
 			right: 0;
 			width: 100%;
-			z-index: 15;
+			z-index: 100;
 		}
 
 		&__mobile-buttons {
