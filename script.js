@@ -11,29 +11,85 @@ const showAllBtn = document.querySelector('.searchbar-form-container__show-all-b
 const mobileMenu = document.querySelector('.mobile-menu');
 const hamburgerMenuBtn = document.querySelector('.mobile-hero__hamburger-menu');
 const informationWindow = document.querySelector('.information-window');
+const contactWindow = document.querySelector('.contact-window');
 const windowDarkenDiv = document.querySelector('.window-darken');
+const contactWindowDarkenDiv = document.querySelector('.darken-contact');
 const homeBtn = document.querySelector('.home');
-const yourNotesBtn = document.querySelector('.your-notes');
 const informationBtn = document.querySelector('.information');
 const contactBtn = document.querySelector('.contact');
+const navBar = document.querySelector('.navbar');
+
+searchbar.addEventListener('keyup', tagSearch);
+searchbar.addEventListener('search', tagSearch);
+searchForm.addEventListener('submit', tagSearch);
+document.addEventListener('scroll', createToTopBtn);
+hamburgerMenuBtn.addEventListener('click', toggleMobileMenu);
+mobileMenu.addEventListener('click', toggleMobileMenu);
+windowDarkenDiv.addEventListener('click', toggleInformationWindow);
+informationWindow.addEventListener('click', toggleInformationWindow);
+contactWindowDarkenDiv.addEventListener('click', toggleContactWindow);
+contactWindow.addEventListener('click', toggleContactWindow);
 
 const navLinks = document.querySelectorAll('.navbar__link').forEach(link => {
-	link.addEventListener('click', e => {
-		e.preventDefault();
+	link.addEventListener('click', () => {
 		document.querySelectorAll('.navbar__link').forEach(link => {
 			link.classList.remove('navbar__highlighted-link');
 		});
 		link.classList.add('navbar__highlighted-link');
-		if (informationWindow.classList.contains('hidden')) {
-			return;
-		} else if (link.classList.contains('information')) {
-			return;
+
+		if (link.classList.contains('information')) {
+			if (informationWindow.classList.contains('hidden')) {
+				informationWindow.classList.remove('hidden');
+				windowDarkenDiv.classList.remove('hidden');
+				contactWindow.classList.add('hidden');
+				contactWindowDarkenDiv.classList.add('hidden');
+				contactBtn.classList.remove('navbar__highlighted-link');
+				console.log('hi');
+			} else {
+				informationWindow.classList.add('hidden');
+				windowDarkenDiv.classList.add('hidden');
+				informationBtn.classList.remove('navbar__highlighted-link');
+				homeBtn.classList.add('navbar__highlighted-link');
+				console.log('hi');
+			}
 		} else {
 			informationWindow.classList.add('hidden');
 			windowDarkenDiv.classList.add('hidden');
 		}
+
+		if (link.classList.contains('contact')) {
+			if (contactWindow.classList.contains('hidden')) {
+				contactWindow.classList.remove('hidden');
+				contactWindowDarkenDiv.classList.remove('hidden');
+				informationWindow.classList.add('hidden');
+				windowDarkenDiv.classList.add('hidden');
+				informationBtn.classList.remove('navbar__highlighted-link');
+			} else {
+				contactWindow.classList.add('hidden');
+				contactWindowDarkenDiv.classList.add('hidden');
+				contactBtn.classList.remove('navbar__highlighted-link');
+				homeBtn.classList.add('navbar__highlighted-link');
+			}
+		} else {
+			contactWindow.classList.add('hidden');
+			contactWindowDarkenDiv.classList.add('hidden');
+		}
 	});
 });
+
+function toggleInformationWindow() {
+	informationWindow.classList.toggle('hidden');
+	windowDarkenDiv.classList.toggle('hidden');
+	informationBtn.classList.remove('navbar__highlighted-link');
+	homeBtn.classList.add('navbar__highlighted-link');
+}
+
+function toggleContactWindow() {
+	contactWindow.classList.toggle('hidden');
+	contactWindowDarkenDiv.classList.toggle('hidden');
+	contactBtn.classList.remove('navbar__highlighted-link');
+	homeBtn.classList.add('navbar__highlighted-link');
+}
 
 document.querySelectorAll('a').forEach(anchor => {
 	anchor.addEventListener('click', function(e) {
@@ -50,15 +106,6 @@ noteForm.addEventListener('submit', e => {
 	createNote(e);
 	yourNotesTitle.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
 });
-searchbar.addEventListener('keyup', tagSearch);
-searchbar.addEventListener('search', tagSearch);
-searchForm.addEventListener('submit', tagSearch);
-document.addEventListener('scroll', createToTopBtn);
-hamburgerMenuBtn.addEventListener('click', toggleMobileMenu);
-mobileMenu.addEventListener('click', toggleMobileMenu);
-informationBtn.addEventListener('click', toggleInformationWindow);
-windowDarkenDiv.addEventListener('click', toggleInformationWindow);
-informationWindow.addEventListener('click', toggleInformationWindow);
 
 function createNote(e) {
 	e.preventDefault();
@@ -226,15 +273,6 @@ window.addEventListener('scroll', () => {
 
 function toggleMobileMenu() {
 	mobileMenu.classList.toggle('hidden');
-}
-
-function toggleInformationWindow() {
-	windowDarkenDiv.classList.toggle('hidden');
-	informationWindow.classList.toggle('hidden');
-	if (informationWindow.classList.contains('hidden')) {
-		informationBtn.classList.remove('navbar__highlighted-link');
-		homeBtn.classList.add('navbar__highlighted-link');
-	}
 }
 
 populateList();

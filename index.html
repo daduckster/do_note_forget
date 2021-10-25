@@ -19,6 +19,7 @@
 
 <body id="home">
   <div class="window-darken hidden"></div>
+  <div class="darken-contact hidden"></div>
 
   <nav class="navbar">
     <div class="navbar__left">
@@ -62,21 +63,56 @@
     </div>
   </div>
 
-  <div class="contact-window">
+  <div class="contact-window hidden">
     <div class="contact-window__background">
       <h2>About the Creator</h2>
+
       <div class="contact-window__intro">
-        <img src="/Profile-photo.jpg" alt="my photo">
-        <div class="contact-window__intro__text">
-          <p>Hi!</p>
+        <img src="/Profile-photo.png" alt="my photo">
+        <div>
+          <p class="contact-window__intro__hi">Hi!</p>
           <p>My name is <span>Olya Vlasak</span> and it’s nice to see you here :)</p>
         </div>
-        <p>I am a Web Developer, UI/UX Designer and Illustrator located in Zurich, Switzerland.</p>
-        <p>Not long ago, I have started my journey in Web-Development and am really passionate about it. With just a
-          laptop, I now have the possibility to create something new and unique.</p>
+      </div>
 
+      <p class="contact-window__text-block">I am a Web Developer, UI/UX Designer and Illustrator located in Zurich,
+        Switzerland.</p>
+      <p class="contact-window__text-block">Not long ago, I have started my journey in Web-Development and am really
+        passionate about it. With just a
+        laptop, I now have the possibility to create something new and unique.</p>
+      <p class="contact-window__text-block">Web-Development opened a whole new world for me and I can’t wait to get into
+        the Tech Industry.</p>
+      <p class="contact-window__text-block__white">Feel free to contact me :)</p>
+
+      <div class="contact-window__contact">
+        <div class="contact-window__contact__left">
+
+          <p class="contact-window__contact__left__contact">CONTACT:</p>
+
+          <div class="contact-window__contact__left__email">
+            <img src="/Email-icon.svg" alt="email-icon">
+            <p>vlasakolga@gmail.com</p>
+            <input type="image" src="/Email-copy.svg" alt="copy icon" class="contact-window__contact__left__copy-icon">
+          </div>
+
+          <div class="contact-window__contact__left__linkedin">
+            <img src="/LinkedIn-icon.svg" alt="linkedin-icon">
+            <p>donthaveyet.com</p>
+            <input type="image" src="/Linkedin-link.svg" alt="link-icon"
+                   class="contact-window__contact__left__link-icon">
+          </div>
+        </div>
+
+        <div class="contact-window__contact__right">
+          <div class="contact-window__contact__right__github">
+            <p>View code: </p>
+            <input type="image" src="/Github-icon.svg" alt="github-icon"
+                   class="contact-window__contact__right__github-icon">
+          </div>
+        </div>
 
       </div>
+
     </div>
   </div>
 
@@ -115,8 +151,8 @@
         <a href="#your-notes" class="mobile-hero__mobile-buttons__your-notes">YOUR NOTES</a>
       </div>
 
-      <img src="/Can2-mobile.png" class="mobile-hero__can-img2" alt="Image of a solar system with a can instead of sun">
-      <img src="/Can1-mobile.png" class="mobile-hero__can-img1" alt="Image of a solar system with a can instead of sun">
+      <img src="/Can-mobile.png" class="mobile-hero__can-img2" alt="Image of a solar system with a can instead of sun">
+      <img src="/Can-mobile.png" class="mobile-hero__can-img1" alt="Image of a solar system with a can instead of sun">
     </div>
 
     <form id="create-new-note" class="note-form">
@@ -140,7 +176,7 @@
       </div>
 
 
-      <img src="/Can2.png" class="note-form__can-img2" alt="Image of a solar system with a can instead of sun">
+      <img src="/Can.png" class="note-form__can-img2" alt="Image of a solar system with a can instead of sun">
       <img src="/Can.png" class="note-form__can-img1" alt="Image of a solar system with a can instead of sun">
     </form>
   </header>
