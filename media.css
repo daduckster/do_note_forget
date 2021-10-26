@@ -2,10 +2,7 @@
   h1 {
     margin-top: 4.7rem;
   }
-  .note-form__can-img1 {
-    left: 27.5vw;
-  }
-  .note-form__can-img2 {
+  .note-form__can-img {
     left: 27.5vw;
   }
   .your-notes-title {
@@ -91,12 +88,7 @@
   .note-form {
     margin: 0.94rem 16.5vw 0 16.3vw;
   }
-  .note-form__can-img1 {
-    width: 35rem;
-    height: auto;
-    top: 28rem;
-  }
-  .note-form__can-img2 {
+  .note-form__can-img {
     width: 35rem;
     height: auto;
     top: 28rem;
@@ -115,10 +107,7 @@
     width: 15rem;
     height: auto;
   }
-  .note-form__can-img1 {
-    top: 28rem;
-  }
-  .note-form__can-img2 {
+  .note-form__can-img {
     top: 28rem;
   }
 }

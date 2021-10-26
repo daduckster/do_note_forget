@@ -275,11 +275,7 @@ h1 {
   display: none;
 }
 
-.mobile-hero__can-img2 {
-  display: none;
-}
-
-.mobile-hero__can-img1 {
+.mobile-hero__can-img {
   display: none;
 }
 
@@ -452,20 +448,9 @@ h1 {
           transform: scale(1.05);
 }
 
-.note-form__can-img1 {
+.note-form__can-img {
   position: absolute;
-  opacity: 0.7;
-  width: 47.25rem;
-  height: auto;
-  left: 25vw;
-  top: 18.5rem;
-  z-index: 1;
-  mix-blend-mode: multiply;
-}
-
-.note-form__can-img2 {
-  position: absolute;
-  opacity: 0.9;
+  opacity: 1;
   width: 47.25rem;
   height: auto;
   left: 25vw;

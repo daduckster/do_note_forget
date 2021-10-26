@@ -16,11 +16,7 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 	}
 
 	.note-form {
-		&__can-img1 {
-			left: 27.5vw;
-		}
-
-		&__can-img2 {
+		&__can-img {
 			left: 27.5vw;
 		}
 	}
@@ -124,13 +120,7 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 	.note-form {
 		margin: 0.94rem 16.5vw 0 16.3vw;
 
-		&__can-img1 {
-			width: 35rem;
-			height: auto;
-			top: 28rem;
-		}
-
-		&__can-img2 {
+		&__can-img {
 			width: 35rem;
 			height: auto;
 			top: 28rem;
@@ -156,11 +146,7 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 	}
 
 	.note-form {
-		&__can-img1 {
-			top: 28rem;
-		}
-
-		&__can-img2 {
+		&__can-img {
 			top: 28rem;
 		}
 	}

@@ -203,18 +203,7 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 			}
 		}
 
-		&__can-img1 {
-			display: flex;
-			position: absolute;
-			opacity: 0.7;
-			width: auto;
-			height: 43vh;
-			left: -2vw;
-			z-index: 1;
-			mix-blend-mode: multiply;
-		}
-
-		&__can-img2 {
+		&__can-img {
 			display: flex;
 			position: absolute;
 			opacity: 1;
@@ -274,11 +263,7 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 			margin-top: 2vh;
 		}
 
-		&__can-img1 {
-			display: none;
-		}
-
-		&__can-img2 {
+		&__can-img {
 			display: none;
 		}
 	}

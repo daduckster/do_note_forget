@@ -207,19 +207,7 @@
     margin-bottom: 1.8rem;
     font-size: 0.89em;
   }
-  .mobile-hero__can-img1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: absolute;
-    opacity: 0.7;
-    width: auto;
-    height: 43vh;
-    left: -2vw;
-    z-index: 1;
-    mix-blend-mode: multiply;
-  }
-  .mobile-hero__can-img2 {
+  .mobile-hero__can-img {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -281,10 +269,7 @@
     padding: 0;
     margin-top: 2vh;
   }
-  .note-form__can-img1 {
-    display: none;
-  }
-  .note-form__can-img2 {
+  .note-form__can-img {
     display: none;
   }
   .your-notes-title {
