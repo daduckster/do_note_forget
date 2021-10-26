@@ -54,12 +54,12 @@ body {
 	padding: 1.25rem 17vw 0 17vw;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 	position: relative;
 	z-index: 40;
 
 	&__img {
-		width: 20rem;
+		width: 18rem;
 		height: auto;
 	}
 

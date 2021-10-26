@@ -47,15 +47,15 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   position: relative;
   z-index: 40;
 }
 
 .navbar__img {
-  width: 20rem;
+  width: 18rem;
   height: auto;
 }
 
