@@ -101,7 +101,7 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 			background-color: rgba(32, 44, 66, 0.97);
 			float: right;
 			display: flex;
-			flex-direction: column;
+			flex-direction: column-reverse;
 			align-items: center;
 		}
 		&__menu-links {
@@ -111,6 +111,7 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
+			margin-bottom: 5vh;
 
 			.mobile-link-highlighted {
 				font-weight: 600;
@@ -126,7 +127,7 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 		}
 
 		&__logo {
-			margin: 2vh 0;
+			margin: 7vh 0 0 0;
 			width: 100%;
 			display: flex;
 			justify-content: center;
@@ -141,10 +142,11 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 	h1 {
 		font-size: 15.5vw;
 		margin-top: 22vh;
+		margin-left: 0.3rem;
 	}
 
 	.mobile-hero {
-		height: 100vh;
+		height: 95vh;
 		width: auto;
 		position: relative;
 		border: 1px solid transparent;
@@ -196,10 +198,12 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 
 			&__your-notes {
 				color: $text;
+				text-decoration: none;
+				border-bottom: 2px solid $text;
 				font-weight: 600;
 				margin-top: 0.8rem;
-				margin-bottom: 1.8rem;
-				font-size: 0.89em;
+				margin-bottom: 0.8rem;
+				font-size: 1em;
 			}
 		}
 
@@ -207,16 +211,20 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 			display: flex;
 			position: absolute;
 			opacity: 1;
-			width: auto;
-			height: 43vh;
-			left: -2vw;
+			width: 100vw;
+			height: auto;
 			z-index: 0;
+		}
+
+		.multiply {
+			mix-blend-mode: multiply;
+			opacity: 0.6;
 		}
 	}
 
 	.note-form {
 		margin: 0;
-		height: 100vh;
+		height: 95vh;
 		width: 100%;
 		border-radius: 0px;
 		padding: 4vh 4.5vw;
@@ -243,7 +251,7 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 		&__text-input {
 			position: relative;
 			z-index: 1;
-			min-height: 50vh;
+			min-height: 40vh;
 			margin-top: 1vh;
 			margin-bottom: 2vh;
 		}

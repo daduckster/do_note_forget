@@ -85,9 +85,9 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -108,6 +108,7 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    margin-bottom: 5vh;
   }
   .mobile-menu__menu-links .mobile-link-highlighted {
     font-weight: 600;
@@ -120,7 +121,7 @@
     font-size: 1em;
   }
   .mobile-menu__logo {
-    margin: 2vh 0;
+    margin: 7vh 0 0 0;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -136,9 +137,10 @@
   h1 {
     font-size: 15.5vw;
     margin-top: 22vh;
+    margin-left: 0.3rem;
   }
   .mobile-hero {
-    height: 100vh;
+    height: 95vh;
     width: auto;
     position: relative;
     border: 1px solid transparent;
@@ -202,10 +204,12 @@
   }
   .mobile-hero__mobile-buttons__your-notes {
     color: #ffca7e;
+    text-decoration: none;
+    border-bottom: 2px solid #ffca7e;
     font-weight: 600;
     margin-top: 0.8rem;
-    margin-bottom: 1.8rem;
-    font-size: 0.89em;
+    margin-bottom: 0.8rem;
+    font-size: 1em;
   }
   .mobile-hero__can-img {
     display: -webkit-box;
@@ -213,14 +217,17 @@
     display: flex;
     position: absolute;
     opacity: 1;
-    width: auto;
-    height: 43vh;
-    left: -2vw;
+    width: 100vw;
+    height: auto;
     z-index: 0;
+  }
+  .mobile-hero .multiply {
+    mix-blend-mode: multiply;
+    opacity: 0.6;
   }
   .note-form {
     margin: 0;
-    height: 100vh;
+    height: 95vh;
     width: 100%;
     border-radius: 0px;
     padding: 4vh 4.5vw;
@@ -252,7 +259,7 @@
   .note-form__text-input {
     position: relative;
     z-index: 1;
-    min-height: 50vh;
+    min-height: 40vh;
     margin-top: 1vh;
     margin-bottom: 2vh;
   }
