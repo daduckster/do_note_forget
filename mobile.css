@@ -7,6 +7,63 @@
   .navbar {
     display: none;
   }
+  .navbar__highlighted-link {
+    border-bottom: none;
+  }
+  .information-window {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+    height: auto;
+    padding: 4vh 6vw;
+    border-radius: 0px;
+  }
+  .information-window h2 {
+    font-size: 1.3em;
+    color: #ff7144;
+  }
+  .information-window__block {
+    margin-top: 1.5rem;
+  }
+  .information-window__block h3 {
+    font-size: 1em;
+    color: #ffecd1;
+  }
+  .contact-window {
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+    height: auto;
+    padding: 4vh 8vw 4vh 6vw;
+    right: 0;
+  }
+  .contact-window__intro {
+    margin: 1.5rem 0;
+  }
+  .contact-window__intro img {
+    width: 7rem;
+    height: auto;
+    margin-right: 1rem;
+  }
+  .contact-window__text-block {
+    margin-bottom: 1.5rem;
+  }
+  .contact-window__contact {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact-window__contact__right {
+    margin-top: 1.5rem;
+  }
   .mobile-menu {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -58,9 +115,6 @@
     margin-bottom: 0.5rem;
     font-weight: 300;
     font-size: 1em;
-  }
-  .mobile-menu__menu-links a:focus {
-    text-decoration: underline;
   }
   .mobile-menu__logo {
     margin: 2vh 0;
@@ -279,6 +333,7 @@
   }
   .notes-container__div {
     margin-top: 2vh;
+    padding: 3vh 6vw;
   }
   .notes-container__back-to-top-btn {
     display: none;
