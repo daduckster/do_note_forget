@@ -24,11 +24,10 @@ searchbar.addEventListener('search', tagSearch);
 searchForm.addEventListener('submit', tagSearch);
 document.addEventListener('scroll', createToTopBtn);
 hamburgerMenuBtn.addEventListener('click', toggleMobileMenu);
+hamburgerMenuBtn.addEventListener('click', hideInformationOrContact);
 mobileMenu.addEventListener('click', toggleMobileMenu);
 windowDarkenDiv.addEventListener('click', toggleInformationWindow);
-informationWindow.addEventListener('click', toggleInformationWindow);
 contactWindowDarkenDiv.addEventListener('click', toggleContactWindow);
-contactWindow.addEventListener('click', toggleContactWindow);
 
 const navLinks = document.querySelectorAll('.navbar__link').forEach(link => {
 	link.addEventListener('click', () => {
@@ -76,20 +75,6 @@ const navLinks = document.querySelectorAll('.navbar__link').forEach(link => {
 		}
 	});
 });
-
-function toggleInformationWindow() {
-	informationWindow.classList.toggle('hidden');
-	windowDarkenDiv.classList.toggle('hidden');
-	informationBtn.classList.remove('navbar__highlighted-link');
-	homeBtn.classList.add('navbar__highlighted-link');
-}
-
-function toggleContactWindow() {
-	contactWindow.classList.toggle('hidden');
-	contactWindowDarkenDiv.classList.toggle('hidden');
-	contactBtn.classList.remove('navbar__highlighted-link');
-	homeBtn.classList.add('navbar__highlighted-link');
-}
 
 document.querySelectorAll('a').forEach(anchor => {
 	anchor.addEventListener('click', function(e) {
@@ -273,6 +258,27 @@ window.addEventListener('scroll', () => {
 
 function toggleMobileMenu() {
 	mobileMenu.classList.toggle('hidden');
+}
+
+function hideInformationOrContact() {
+	informationWindow.classList.add('hidden');
+	windowDarkenDiv.classList.add('hidden');
+	contactWindow.classList.add('hidden');
+	contactWindowDarkenDiv.classList.add('hidden');
+}
+
+function toggleInformationWindow() {
+	informationWindow.classList.toggle('hidden');
+	windowDarkenDiv.classList.toggle('hidden');
+	informationBtn.classList.remove('navbar__highlighted-link');
+	homeBtn.classList.add('navbar__highlighted-link');
+}
+
+function toggleContactWindow() {
+	contactWindow.classList.toggle('hidden');
+	contactWindowDarkenDiv.classList.toggle('hidden');
+	contactBtn.classList.remove('navbar__highlighted-link');
+	homeBtn.classList.add('navbar__highlighted-link');
 }
 
 populateList();

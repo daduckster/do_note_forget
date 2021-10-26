@@ -22,7 +22,10 @@
     height: auto;
   }
   .information-window {
-    padding: 0.7rem 3vw 0 0;
+    right: 3vw;
+  }
+  .contact-window {
+    right: 3vw;
   }
   h1 {
     margin-top: 3.5rem;
@@ -76,8 +79,14 @@
     background: cover repeat fixed;
     background-size: 100vw;
   }
-  .information-window__background {
+  .information-window {
     width: 30rem;
+  }
+  .contact-window {
+    width: 30rem;
+  }
+  .contact-window__contact__left {
+    margin-right: 2rem;
   }
   .note-form {
     margin: 0.94rem 16.5vw 0 16.3vw;

@@ -21,7 +21,7 @@ body {
 
 .window-darken {
   position: fixed;
-  background-color: rgba(14, 19, 29, 0.4);
+  background-color: rgba(14, 19, 29, 0.6);
   height: 100%;
   width: 100vw;
   z-index: 30;
@@ -29,7 +29,7 @@ body {
 
 .darken-contact {
   position: fixed;
-  background-color: rgba(14, 19, 29, 0.4);
+  background-color: rgba(14, 19, 29, 0.6);
   height: 100%;
   width: 100vw;
   z-index: 30;
@@ -63,7 +63,7 @@ body {
   text-align: right;
 }
 
-.navbar__link {
+.navbar__desktop-link {
   text-decoration: none;
   color: #ffca7e;
   margin-left: 1.5rem;
@@ -81,23 +81,14 @@ body {
 
 .information-window {
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100vw;
-  z-index: 50;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  padding: 0.7rem 17vw 0 0;
-  color: #ffca7e;
-  font-weight: 300;
-}
-
-.information-window__background {
   background-color: #202c42;
   width: 35rem;
   padding: 2.50rem;
+  z-index: 50;
+  right: 17vw;
+  color: #ffca7e;
+  font-weight: 300;
+  border-radius: 5px;
 }
 
 .information-window h2 {
@@ -119,20 +110,18 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100vw;
-  z-index: 50;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  padding: 0.7rem 17vw 0 0;
-  color: #ffca7e;
-  font-weight: 300;
-}
-
-.contact-window__background {
   background-color: #202c42;
   width: 35rem;
   padding: 2.50rem;
+  z-index: 50;
+  right: 17vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #ffca7e;
+  font-weight: 300;
+  border-radius: 5px;
 }
 
 .contact-window h2 {

@@ -41,7 +41,11 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 	}
 
 	.information-window {
-		padding: 0.7rem 3vw 0 0;
+		right: 3vw;
+	}
+
+	.contact-window {
+		right: 3vw;
 	}
 
 	h1 {
@@ -104,8 +108,16 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 	}
 
 	.information-window {
-		&__background {
-			width: 30rem;
+		width: 30rem;
+	}
+
+	.contact-window {
+		width: 30rem;
+
+		&__contact {
+			&__left {
+				margin-right: 2rem;
+			}
 		}
 	}
 
