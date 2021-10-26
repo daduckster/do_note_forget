@@ -19,6 +19,70 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 
 	.navbar {
 		display: none;
+		&__highlighted-link {
+			border-bottom: none;
+		}
+	}
+
+	.information-window {
+		top: 0;
+		bottom: 0;
+		right: 0;
+		position: fixed;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		width: 100%;
+		height: auto;
+		padding: 4vh 6vw;
+
+		border-radius: 0px;
+
+		h2 {
+			font-size: 1.3em;
+			color: $title;
+		}
+
+		&__block {
+			margin-top: 1.5rem;
+
+			h3 {
+				font-size: 1em;
+				color: $white-text;
+			}
+		}
+	}
+
+	.contact-window {
+		top: 0;
+		bottom: 0;
+		position: fixed;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		width: 100%;
+		height: auto;
+		padding: 4vh 8vw 4vh 6vw;
+		right: 0;
+
+		&__intro {
+			margin: 1.5rem 0;
+
+			img {
+				width: 7rem;
+				height: auto;
+				margin-right: 1rem;
+			}
+		}
+		&__text-block {
+			margin-bottom: 1.5rem;
+		}
+
+		&__contact {
+			flex-direction: column;
+
+			&__right {
+				margin-top: 1.5rem;
+			}
+		}
 	}
 
 	.mobile-menu {
@@ -54,10 +118,6 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 				margin-bottom: 0.5rem;
 				font-weight: 300;
 				font-size: 1em;
-
-				&:focus {
-					text-decoration: underline;
-				}
 			}
 		}
 
@@ -263,6 +323,7 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 	.notes-container {
 		&__div {
 			margin-top: 2vh;
+			padding: 3vh 6vw;
 		}
 		&__back-to-top-btn {
 			display: none;
