@@ -18,16 +18,40 @@ const homeBtn = document.querySelector('.home');
 const informationBtn = document.querySelector('.information');
 const contactBtn = document.querySelector('.contact');
 const navBar = document.querySelector('.navbar');
+const mobileHome = document.querySelector('.mobile-home');
+const mobileNewNote = document.querySelector('.mobile-new-note');
+const mobileYourNotes = document.querySelector('.mobile-your-notes');
 
 searchbar.addEventListener('keyup', tagSearch);
 searchbar.addEventListener('search', tagSearch);
 searchForm.addEventListener('submit', tagSearch);
 document.addEventListener('scroll', createToTopBtn);
+document.addEventListener('scroll', highlightMobileLinks);
 hamburgerMenuBtn.addEventListener('click', toggleMobileMenu);
 hamburgerMenuBtn.addEventListener('click', hideInformationOrContact);
 mobileMenu.addEventListener('click', toggleMobileMenu);
 windowDarkenDiv.addEventListener('click', toggleInformationWindow);
 contactWindowDarkenDiv.addEventListener('click', toggleContactWindow);
+
+function highlightMobileLinks() {
+	if (window.scrollY < 350) {
+		mobileHome.classList.add('mobile-link-highlighted');
+	} else {
+		mobileHome.classList.remove('mobile-link-highlighted');
+	}
+
+	if (window.scrollY > 350 && window.scrollY < 1000) {
+		mobileNewNote.classList.add('mobile-link-highlighted');
+	} else {
+		mobileNewNote.classList.remove('mobile-link-highlighted');
+	}
+
+	if (window.scrollY > 1000) {
+		mobileYourNotes.classList.add('mobile-link-highlighted');
+	} else {
+		mobileYourNotes.classList.remove('mobile-link-highlighted');
+	}
+}
 
 const navLinks = document.querySelectorAll('.navbar__link').forEach(link => {
 	link.addEventListener('click', () => {

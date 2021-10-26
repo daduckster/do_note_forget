@@ -109,6 +109,9 @@
         -ms-flex-pack: center;
             justify-content: center;
   }
+  .mobile-menu__menu-links .mobile-link-highlighted {
+    font-weight: 600;
+  }
   .mobile-menu__menu-links a {
     text-decoration: none;
     color: #ffca7e;
