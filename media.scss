@@ -28,20 +28,10 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 
 @media (max-width: 1420px) {
 	.navbar {
-		padding: 1.25rem 3vw 0 3vw;
-
 		&__img {
 			width: 17rem;
 			height: auto;
 		}
-	}
-
-	.information-window {
-		right: 3vw;
-	}
-
-	.contact-window {
-		right: 3vw;
 	}
 
 	h1 {
@@ -49,6 +39,7 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 	}
 
 	.note-form {
+		margin: 0.5rem 28vw 0 28vw;
 		&__text-input {
 			min-height: 10rem;
 		}
@@ -91,6 +82,193 @@ $text-gradient: 315deg, #ff7144, #ff7144, #ff7144, #ffc83e, #ffc83e, #ffc83e;
 	.notes-container {
 		&__back-to-top-btn {
 			padding: 1.2rem 0.8rem;
+		}
+	}
+}
+
+@media (max-width: 1600px) and (max-height: 900px) {
+	body {
+		font-size: 1rem;
+	}
+
+	.navbar {
+		padding: 0.7rem 3vw 0 3vw;
+		&__img {
+			width: 14rem;
+			height: auto;
+		}
+
+		&__desktop-link {
+			margin-left: 1rem;
+		}
+	}
+
+	.information-window {
+		padding: 2rem;
+	}
+
+	.contact-window {
+		padding: 2rem;
+
+		&__intro {
+			margin: 1.5rem 0;
+		}
+
+		&__text-block {
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	h1 {
+		font-size: 3.8em;
+		margin-top: 2.5rem;
+	}
+
+	.note-form {
+		margin: 0.5rem 31vw 0 31vw;
+		padding: 2rem 2.5rem;
+
+		&__label {
+			font-size: 1.2em;
+		}
+
+		&__title-input {
+			height: 2.8rem;
+			margin-bottom: 1rem;
+		}
+
+		&__text-input {
+			min-height: 10rem;
+			margin-bottom: 1rem;
+		}
+
+		&__tag-input {
+			height: 2.8rem;
+		}
+
+		&__submit-btn {
+			height: 2.8rem;
+		}
+
+		&__can-img {
+			width: 40rem;
+			height: auto;
+			left: 28vw;
+			top: 15.5rem;
+		}
+	}
+
+	.your-notes-title {
+		font-size: 1.4em;
+	}
+
+	main {
+		padding: 2rem 2.5rem 2.5rem 2.5rem;
+	}
+
+	.notes-container {
+		&__div {
+			margin-top: 2rem;
+		}
+	}
+}
+
+@media (max-width: 1300px) and (max-height: 800px) {
+	body {
+		font-size: 1rem;
+	}
+
+	.navbar {
+		padding: 0.5rem 3vw 0 3vw;
+		&__desktop-link {
+			margin-left: 1rem;
+		}
+	}
+
+	.information-window {
+		width: 32rem;
+		font-size: 0.88rem;
+		padding: 1.5rem;
+	}
+
+	.contact-window {
+		width: 32rem;
+		font-size: 0.88rem;
+		padding: 1.5rem;
+
+		&__intro {
+			margin: 1rem 0;
+
+			img {
+				width: 7rem;
+				margin-right: 1.5rem;
+			}
+		}
+
+		&__text-block {
+			margin-bottom: 1rem;
+		}
+	}
+
+	h1 {
+		font-size: 3.3em;
+		margin-top: 0.5rem;
+	}
+
+	.note-form {
+		margin: 0.5rem 29vw 0 29vw;
+		padding: 1.5rem 2rem;
+
+		&__label {
+			font-size: 1.1em;
+		}
+
+		&__title-input {
+			height: 2.8rem;
+			margin-bottom: 1rem;
+		}
+
+		&__text-input {
+			min-height: 10rem;
+			margin-bottom: 1rem;
+		}
+
+		&__last-line {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+
+		&__tag-input {
+			height: 2.8rem;
+			margin-bottom: 0;
+		}
+
+		&__submit-btn {
+			height: 2.8rem;
+			margin-left: 1.7rem;
+		}
+
+		&__can-img {
+			width: 32rem;
+			height: auto;
+			left: 29.5vw;
+			top: 16.5rem;
+		}
+	}
+
+	.your-notes-title {
+		font-size: 1.3em;
+	}
+
+	main {
+		padding: 1.5rem 2rem 2rem 2rem;
+	}
+
+	.notes-container {
+		&__div {
+			margin-top: 1.5rem;
 		}
 	}
 }

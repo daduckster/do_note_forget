@@ -40,7 +40,7 @@ body {
 }
 
 .navbar {
-  padding: 1.25rem 17vw 0 17vw;
+  padding: 1.25rem 3vw 0 3vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -68,7 +68,7 @@ body {
   color: #ffca7e;
   margin-left: 1.5rem;
   font-weight: 300;
-  font-size: 0.89em;
+  font-size: 0.88em;
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
@@ -85,7 +85,7 @@ body {
   width: 35rem;
   padding: 2.50rem;
   z-index: 50;
-  right: 17vw;
+  right: 3vw;
   color: #ffca7e;
   font-weight: 300;
   border-radius: 5px;
@@ -114,7 +114,7 @@ body {
   width: 35rem;
   padding: 2.50rem;
   z-index: 50;
-  right: 17vw;
+  right: 3vw;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -297,8 +297,8 @@ h1 {
 .note-form__title-input {
   display: block;
   margin-bottom: 1.25rem;
-  margin-top: 0.81rem;
-  height: 3.13rem;
+  margin-top: 0.6rem;
+  height: 3rem;
   width: 100%;
   border: none;
   border-radius: 5px;
@@ -336,7 +336,7 @@ h1 {
 .note-form__text-input {
   display: block;
   margin-bottom: 1.25rem;
-  margin-top: 0.63rem;
+  margin-top: 0.6rem;
   min-height: 12rem;
   width: 100%;
   border-radius: 5px;
@@ -391,8 +391,8 @@ h1 {
 }
 
 .note-form__tag-input {
-  margin-top: 0.81rem;
-  height: 3.13rem;
+  margin-top: 0.6rem;
+  height: 3rem;
   width: 100%;
   border-radius: 5px;
   background-color: #141c2b;
@@ -430,7 +430,7 @@ h1 {
 .note-form__submit-btn {
   background: linear-gradient(95deg, #ff7144, #ffc83e);
   font-size: 1.2em;
-  margin-top: 0.81rem;
+  margin-top: 0.6rem;
   margin-left: 3vw;
   color: #141c2b;
   font-weight: 700;
@@ -499,9 +499,7 @@ main {
   border-radius: 5px;
   font-size: 1em;
   color: #ffca7e;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 2.5rem;
 }
 
 .searchbar-form-container__searchbar-form {
