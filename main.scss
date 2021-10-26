@@ -32,7 +32,7 @@ body {
 
 .window-darken {
 	position: fixed;
-	background-color: rgba(14, 19, 29, 0.4);
+	background-color: rgba(14, 19, 29, 0.6);
 	height: 100%;
 	width: 100vw;
 	z-index: 30;
@@ -40,7 +40,7 @@ body {
 
 .darken-contact {
 	position: fixed;
-	background-color: rgba(14, 19, 29, 0.4);
+	background-color: rgba(14, 19, 29, 0.6);
 	height: 100%;
 	width: 100vw;
 	z-index: 30;
@@ -67,7 +67,7 @@ body {
 		text-align: right;
 	}
 
-	&__link {
+	&__desktop-link {
 		text-decoration: none;
 		color: $text;
 		margin-left: 1.5rem;
@@ -84,19 +84,14 @@ body {
 
 .information-window {
 	position: absolute;
-	display: flex;
-	width: 100vw;
+	background-color: $note-background;
+	width: 35rem;
+	padding: 2.50rem;
 	z-index: 50;
-	justify-content: flex-end;
-	padding: 0.7rem 17vw 0 0;
+	right: 17vw;
 	color: $text;
 	font-weight: 300;
-
-	&__background {
-		background-color: $note-background;
-		width: 35rem;
-		padding: 2.50rem;
-	}
+	border-radius: 5px;
 
 	h2 {
 		font-size: 1.3em;
@@ -116,18 +111,15 @@ body {
 .contact-window {
 	position: absolute;
 	display: flex;
-	width: 100vw;
+	background-color: $note-background;
+	width: 35rem;
+	padding: 2.50rem;
 	z-index: 50;
-	justify-content: flex-end;
-	padding: 0.7rem 17vw 0 0;
+	right: 17vw;
+	flex-direction: column;
 	color: $text;
 	font-weight: 300;
-
-	&__background {
-		background-color: $note-background;
-		width: 35rem;
-		padding: 2.50rem;
-	}
+	border-radius: 5px;
 
 	h2 {
 		font-size: 1.3em;
